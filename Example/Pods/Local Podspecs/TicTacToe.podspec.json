@@ -1,0 +1,22 @@
+{
+  "name": "TicTacToe",
+  "version": "0.1.0",
+  "summary": "A short description of TicTacToe.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Helio Mesquita/TicTacToe",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Helio Mesquita": "helio.mesquitaios@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Helio Mesquita/TicTacToe.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TicTacToe/Classes/**/*"
+}
