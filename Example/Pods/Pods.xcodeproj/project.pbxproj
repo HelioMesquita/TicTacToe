@@ -143,7 +143,11 @@
 		E2058F4A0E7638E420DE96F8DC17AAA9 /* EXPMatchers+raiseWithReason.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FA63DB1E59FE8D62A32C361945CC97 /* EXPMatchers+raiseWithReason.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E76AF00320AF5B48404A6DB907F9CBCF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84312C9F751F547808B90B3471A69B1 /* QuartzCore.framework */; };
 		E791EEB9E7DA8C5DBDFF80A2BA7A6A4F /* EXPMatchers+respondTo.h in Headers */ = {isa = PBXBuildFile; fileRef = F774BAF5D065919ECB8C2852C414EE19 /* EXPMatchers+respondTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9442B1B23D234E400FBB9CE /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = E9442B1A23D234E400FBB9CE /* UIView+Extensions.m */; };
 		E969F8D679A40C630D2E855651A49D90 /* EXPMatchers+contain.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AF63B75AD42D15117F82F13DA818A8D /* EXPMatchers+contain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E988A09E23D1FFD4005DE65B /* GridWindow copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A09C23D1FFD4005DE65B /* GridWindow copy.swift */; };
+		E988A09F23D1FFD4005DE65B /* GridViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A09D23D1FFD4005DE65B /* GridViewController copy.swift */; };
+		E988A0A323D23493005DE65B /* UIView+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = E988A0A223D23493005DE65B /* UIView+Extensions.h */; };
 		EB069F269F5574F1F33F1E577CACB14C /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A7A56F363AD9372CCB8E3F6412540E /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		EC57F974317D76B799CFE2A018B5F9E2 /* EXPMatchers+beNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 82444FE7B781A7F0B838CDE72B451F41 /* EXPMatchers+beNil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EFEE0CA67BDA8D1262278A217868C3DF /* Specta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 802A79D03CA637757B23759EF0A44B14 /* Specta-dummy.m */; };
@@ -387,6 +391,10 @@
 		E80416032B18506139A06E3CED2F08DF /* Expecta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Expecta.modulemap; sourceTree = "<group>"; };
 		E8713B1ED8D15C8A0523963755596AC6 /* ExpectaObject+FBSnapshotTest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ExpectaObject+FBSnapshotTest.m"; sourceTree = "<group>"; };
 		E92E691F17DBC2203F90E746A7636B28 /* EXPMatchers+beGreaterThanOrEqualTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beGreaterThanOrEqualTo.m"; path = "Expecta/Matchers/EXPMatchers+beGreaterThanOrEqualTo.m"; sourceTree = "<group>"; };
+		E9442B1A23D234E400FBB9CE /* UIView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extensions.m"; path = "TicTacToe/Classes/UIView+Extensions.m"; sourceTree = "<group>"; };
+		E988A09C23D1FFD4005DE65B /* GridWindow copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GridWindow copy.swift"; sourceTree = "<group>"; };
+		E988A09D23D1FFD4005DE65B /* GridViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GridViewController copy.swift"; sourceTree = "<group>"; };
+		E988A0A223D23493005DE65B /* UIView+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIView+Extensions.h"; path = "TicTacToe/Classes/UIView+Extensions.h"; sourceTree = "<group>"; };
 		EA249BB516AFEABE360575518BF7F303 /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPBlockDefinedMatcher.h; path = Expecta/EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
 		EAB4F78153E405E98AC8BACFDA514D7C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		EBE02B1FC07F445E35A95A137FAA5299 /* Specta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Specta.xcconfig; sourceTree = "<group>"; };
@@ -407,10 +415,10 @@
 		F80C74F675C6A7BA92CBA58057C9078E /* Pods-TicTacToe_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TicTacToe_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		F827D555082DC6514605F9AB327FE273 /* EXPMatchers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPMatchers.h; path = Expecta/Matchers/EXPMatchers.h; sourceTree = "<group>"; };
 		F919EF3503C402CC5F7A4C3DB6193377 /* SPTTestSuite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTTestSuite.h; path = Specta/Specta/SPTTestSuite.h; sourceTree = "<group>"; };
-		FD34952623CE816900B2862E /* TicTacToeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicTacToeViewController.h; sourceTree = "<group>"; };
-		FD34952723CE816900B2862E /* TicTacToeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicTacToeViewController.m; sourceTree = "<group>"; };
-		FDA703A223CE79A500C80257 /* TTWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTWindow.h; sourceTree = "<group>"; };
-		FDA703A323CE79A500C80257 /* TTWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTWindow.m; sourceTree = "<group>"; };
+		FD34952623CE816900B2862E /* TicTacToeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TicTacToeViewController.h; path = TicTacToe/Classes/TicTacToeViewController.h; sourceTree = "<group>"; };
+		FD34952723CE816900B2862E /* TicTacToeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TicTacToeViewController.m; path = TicTacToe/Classes/TicTacToeViewController.m; sourceTree = "<group>"; };
+		FDA703A223CE79A500C80257 /* TTWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TTWindow.h; path = TicTacToe/Classes/TTWindow.h; sourceTree = "<group>"; };
+		FDA703A323CE79A500C80257 /* TTWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TTWindow.m; path = TicTacToe/Classes/TTWindow.m; sourceTree = "<group>"; };
 		FE7FFA6FCAFB27A7D7E44187593351F4 /* EXPMatchers+beGreaterThan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThan.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThan.h"; sourceTree = "<group>"; };
 		FEFD4A1C51CB7BA963FEFB3824AED27A /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
 		FF453CC0D321E182D58A17C8CBA7C761 /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
@@ -552,6 +560,10 @@
 				FDA703A323CE79A500C80257 /* TTWindow.m */,
 				FD34952623CE816900B2862E /* TicTacToeViewController.h */,
 				FD34952723CE816900B2862E /* TicTacToeViewController.m */,
+				E988A09D23D1FFD4005DE65B /* GridViewController copy.swift */,
+				E988A09C23D1FFD4005DE65B /* GridWindow copy.swift */,
+				E988A0A223D23493005DE65B /* UIView+Extensions.h */,
+				E9442B1A23D234E400FBB9CE /* UIView+Extensions.m */,
 			);
 			name = TicTacToe;
 			path = ../..;
@@ -949,6 +961,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E988A0A323D23493005DE65B /* UIView+Extensions.h in Headers */,
 				FDA703A423CE79A500C80257 /* TTWindow.h in Headers */,
 				78DFE0753B7D8C012A93295F29D2D4A7 /* TicTacToe-umbrella.h in Headers */,
 				FD34952823CE816900B2862E /* TicTacToeViewController.h in Headers */,
@@ -1124,6 +1137,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					07B1D2B5F2423F7C4B7C15D98A163AA7 = {
+						LastSwiftMigration = 1020;
+					};
+					DC371B7477C88184274EC6710690F97C = {
+						LastSwiftMigration = 1020;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1207,6 +1228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD34952923CE816900B2862E /* TicTacToeViewController.m in Sources */,
+				E9442B1B23D234E400FBB9CE /* UIView+Extensions.m in Sources */,
 				DDA0B332544E83C596AF6929861183C2 /* TicTacToe-dummy.m in Sources */,
 				FDA703A523CE79A500C80257 /* TTWindow.m in Sources */,
 			);
@@ -1239,6 +1261,7 @@
 				05CFF6618B87EDE2069D4C5D3DDFF9EB /* EXPMatchers+beginWith.m in Sources */,
 				46ACAF12638940470981FA6689B0469F /* EXPMatchers+beGreaterThan.m in Sources */,
 				4E7928EF9169E1DE84CBF429162A4128 /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */,
+				E988A09F23D1FFD4005DE65B /* GridViewController copy.swift in Sources */,
 				F4591B9C7F70268A3F94B40ADDBA5202 /* EXPMatchers+beIdenticalTo.m in Sources */,
 				B5596C58EE23B7C7BCE850A4C6679F1C /* EXPMatchers+beInstanceOf.m in Sources */,
 				5DD71838737687E6FA4583D98B08D7D4 /* EXPMatchers+beInTheRangeOf.m in Sources */,
@@ -1251,6 +1274,7 @@
 				140394F97EEF0A95AB171649249F211C /* EXPMatchers+beTruthy.m in Sources */,
 				DE7FC5D8F81CE893DB6EDF99865350C5 /* EXPMatchers+conformTo.m in Sources */,
 				7709CF64039955B3BAF42CDA38E0F96F /* EXPMatchers+contain.m in Sources */,
+				E988A09E23D1FFD4005DE65B /* GridWindow copy.swift in Sources */,
 				D327EEB8522F6389513EB84ACF12F242 /* EXPMatchers+endWith.m in Sources */,
 				05BCAED08DADF67CC4711A102262D9AB /* EXPMatchers+equal.m in Sources */,
 				15C0054801F96BA3329545B1FAA6A85E /* EXPMatchers+haveCountOf.m in Sources */,
@@ -1378,6 +1402,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA9343B793221E6999DDA57064D65101 /* Expecta.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1390,7 +1415,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Expecta/Expecta-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Expecta/Expecta-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Expecta/Expecta.modulemap";
 				PRODUCT_MODULE_NAME = Expecta;
@@ -1549,7 +1574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1564,6 +1589,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA9343B793221E6999DDA57064D65101 /* Expecta.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1576,7 +1602,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Expecta/Expecta-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Expecta/Expecta-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Expecta/Expecta.modulemap";
 				PRODUCT_MODULE_NAME = Expecta;
@@ -1584,6 +1610,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1740,7 +1767,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1757,6 +1784,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C7E2D18F688034771360B7671BD8D3D3 /* TicTacToe.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1769,7 +1797,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TicTacToe/TicTacToe-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TicTacToe/TicTacToe-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/TicTacToe/TicTacToe.modulemap";
 				PRODUCT_MODULE_NAME = TicTacToe;
@@ -1777,6 +1805,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1855,6 +1884,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C7E2D18F688034771360B7671BD8D3D3 /* TicTacToe.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1867,7 +1897,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TicTacToe/TicTacToe-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TicTacToe/TicTacToe-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/TicTacToe/TicTacToe.modulemap";
 				PRODUCT_MODULE_NAME = TicTacToe;

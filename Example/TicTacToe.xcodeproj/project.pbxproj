@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0BBD307316AA01FF52BBA0AD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0BBD307316AA01FF52BBA0AD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2507D4385255C8BF3059A94D /* Pods_TicTacToe_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TicTacToe_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54165A03B384FDA16C7F7EC2 /* Pods_TicTacToe_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TicTacToe_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* TicTacToe_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,9 +64,9 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88C992D6888FDC16F09D621D /* Pods-TicTacToe_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe_Tests.release.xcconfig"; path = "Target Support Files/Pods-TicTacToe_Tests/Pods-TicTacToe_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B4A7FD64A1906DA759CBA7D5 /* Pods-TicTacToe_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe_Example.debug.xcconfig"; path = "Target Support Files/Pods-TicTacToe_Example/Pods-TicTacToe_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		BBD78F1272966BC2736E7C33 /* TicTacToe.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TicTacToe.podspec; path = ../TicTacToe.podspec; sourceTree = "<group>"; };
+		BBD78F1272966BC2736E7C33 /* TicTacToe.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TicTacToe.podspec; path = ../TicTacToe.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CDAF26B6BC9567BDFF768630 /* Pods-TicTacToe_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe_Example.release.xcconfig"; path = "Target Support Files/Pods-TicTacToe_Example/Pods-TicTacToe_Example.release.xcconfig"; sourceTree = "<group>"; };
-		CE5017CC46998E4FBEEFD7CF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		CE5017CC46998E4FBEEFD7CF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,6 @@
 				75AACADAA8BE1994DE2DE135 /* Pods-TicTacToe_Tests.debug.xcconfig */,
 				88C992D6888FDC16F09D621D /* Pods-TicTacToe_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -259,6 +258,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

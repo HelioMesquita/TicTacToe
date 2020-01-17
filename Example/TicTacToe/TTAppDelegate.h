@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+@import TicTacToe;
 
 @interface TTAppDelegate : UIResponder <UIApplicationDelegate>
 

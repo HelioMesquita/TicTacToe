@@ -15,7 +15,10 @@
 
 - (instancetype)init {
     self = [super initWithFrame:UIScreen.mainScreen.bounds];
-    self.backgroundColor = nil;
+    if (self) {
+        self.backgroundColor = nil;
+        return self;
+    }
     return self;
 }
 
