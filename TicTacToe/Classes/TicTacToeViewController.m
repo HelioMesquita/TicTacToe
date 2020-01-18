@@ -14,23 +14,15 @@
 
 @implementation TicTacToeViewController
 
-- (Status)next:(nonnull Status *)status {
-
-    if (status == on) {
-        return baseline4;
-    }
-
-    if (status == off) {
-        return on;
-    }
-
-    return baseline4;
-}
-
+typedef enum {
+    SPACING4,
+    SPACING8,
+    OFF
+} Baseline;
 
 bool isVolumeControllerHidden = true;
 TTWindow * window;
-Status currentStatus = off;
+Baseline currentBaseline = OFF;
 
 NSMutableArray * horizontalBaselines;
 NSMutableArray * horizontalSpacing;
@@ -44,105 +36,87 @@ CGFloat lineSpacing = 4;
 - (instancetype)init {
     self = [super initWithNibName: nil bundle: nil];
     if (self) {
-        self.window = [[TTWindow new]init];
-        self.window.windowLevel = UIWindowLevelAlert;
-        [self.window setHidden:NO];
-        self.window.rootViewController = self;
-        [self.window setUserInteractionEnabled:YES];
-
-
-        self.horizontalSpacing = [NSMutableArray new];
-        self.horizontalBaselines = [NSMutableArray new];
-
-        self.verticalSpacing = [NSMutableArray new];
-        self.verticalBaselines = [NSMutableArray new];
-
-        self.window = [TTWindow new];
+        window = [[TTWindow new]init];
+        window.windowLevel = UIWindowLevelAlert; //window.windowLevel = UIWindow.Level(floatLiteral: .greatestFiniteMagnitude)
+        window.view = self.view;
+        [window setHidden:NO];
+        [window setRootViewController: self];
+        [window setUserInteractionEnabled:YES];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configureVolumeView];
-    [self configureView];
+    [self configure];
     [self addBaselines];
 }
 
-- (void)configureView {
+- (void)viewWillAppear:(BOOL)animated {
+    AVAudioSession* audioSession = [AVAudioSession sharedInstance];
+    [audioSession setActive:YES error:nil];
+    [audioSession addObserver:self forKeyPath:@"outputVolume" options:0 context:nil];
+}
+
+- (void)configure {
     self.view.backgroundColor = UIColor.clearColor;
-    [self.view setUserInteractionEnabled:YES];
-    self.window.view = self.view;
+    [self.view setUserInteractionEnabled: NO];
+
+    horizontalSpacing = [NSMutableArray array];
+    horizontalBaselines = [NSMutableArray array];
+
+    verticalSpacing = [NSMutableArray array];
+    verticalBaselines = [NSMutableArray array];
 }
 
 - (void)addBaselines {
     [self addVertical: &lineSize lineSpacing: &lineSpacing previuosBaseline:nil];
     [self addHorizontal: &lineSize lineSpacing: &lineSpacing previuosBaseline:nil];
-}
-
-- (void)configureVolumeView {
-    if (isVolumeControllerHidden) {
-        MPVolumeView *volumeView = [[MPVolumeView alloc]initWithFrame: CGRectZero];
-        for (UIView *subview in volumeView.subviews) {
-            UIButton *button;
-            if ([subview isKindOfClass:[UIButton class]]) {
-                // guard let button = subview as? UIButton else { continue }
-                // button.setImage(nil, for: .normal)
-                // button.isEnabled = false
-                // button.sizeToFit()
-
-                // button = ((UIButton*)subview);
-                //                [button setImage:nil forState:normal];
-                //                [button setEnabled:false];
-                //                [button sizeToFit];
-            }
-        }
-        [UIApplication.sharedApplication.windows.firstObject addSubview:volumeView];
-        [UIApplication.sharedApplication.windows.firstObject sendSubviewToBack:volumeView];
-    }
+    [self setBaselineHidden:true];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if (keyPath == @"outputVolume") {
-        Status nextStatus = [self next:currentStatus];
-        if (nextStatus == on) {
+    if ([keyPath  isEqualToString: @"outputVolume"]) {
+        [self handleBaseline];
+    }
+}
 
+- (void)handleBaseline {
+    switch (currentBaseline) {
+        case SPACING4:
+            currentBaseline = SPACING8;
+            [self setBaselineHidden:false];
+            [self setBaselineSpacing:8];
+            break;
+        case SPACING8:
+            currentBaseline = OFF;
+            [self setBaselineHidden:true];
+            break;
+        case OFF:
+            currentBaseline = SPACING4;
+            [self setBaselineHidden:false];
+            [self setBaselineSpacing:4];
+            break;
+    }
+}
 
-            for (UIView *subview in verticalBaselines) {
-                [subview setHidden:false];
-            }
+- (void)setBaselineSpacing:(CGFloat)value {
+    for (NSLayoutConstraint *constraint in verticalSpacing) {
+        [constraint setConstant:value];
+    }
 
-            for (UIView *subview in horizontalBaselines) {
-                [subview setHidden:false];
-            }
+    for (NSLayoutConstraint *constraint in horizontalSpacing) {
+        [constraint setConstant:value];
+    }
+}
 
-            for (NSLayoutConstraint *constraint in verticalSpacing) {
-                [constraint setConstant:4];
-            }
+- (void)setBaselineHidden:(BOOL)hidden {
+    for (UIView *subview in verticalBaselines) {
+        [subview setHidden:hidden];
+    }
 
-            for (NSLayoutConstraint *constraint in horizontalSpacing) {
-                [constraint setConstant:4];
-            }
-
-        } else if (nextStatus == baseline4) {
-            for (NSLayoutConstraint *constraint in verticalSpacing) {
-                [constraint setConstant:8];
-            }
-
-            for (NSLayoutConstraint *constraint in horizontalSpacing) {
-                [constraint setConstant:8];
-            }
-
-        } else {
-            for (UIView *subview in verticalBaselines) {
-                [subview setHidden:true];
-            }
-
-            for (UIView *subview in horizontalBaselines) {
-                [subview setHidden:true];
-            }
-        }
-        currentStatus = nextStatus;
+    for (UIView *subview in horizontalBaselines) {
+        [subview setHidden:hidden];
     }
 }
 
@@ -155,11 +129,11 @@ CGFloat lineSpacing = 4;
         [horizontalSpacing addObject:spacing];
 
         [NSLayoutConstraint activateConstraints:@[
-                                                  [baseline.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
-                                                  [baseline.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
-                                                  [baseline.heightAnchor constraintEqualToConstant: *lineSize],
-                                                  spacing
-                                                  ]
+            [baseline.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
+            [baseline.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
+            [baseline.heightAnchor constraintEqualToConstant: *lineSize],
+            spacing
+        ]
          ];
 
         [self.view layoutSubviews];
@@ -174,11 +148,11 @@ CGFloat lineSpacing = 4;
         [horizontalBaselines addObject:baseline];
 
         [NSLayoutConstraint activateConstraints:@[
-                                                  [baseline.topAnchor constraintEqualToAnchor: self.view.topAnchor],
-                                                  [baseline.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
-                                                  [baseline.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
-                                                  [baseline.heightAnchor constraintEqualToConstant: *lineSize]
-                                                  ]
+            [baseline.topAnchor constraintEqualToAnchor: self.view.topAnchor],
+            [baseline.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
+            [baseline.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
+            [baseline.heightAnchor constraintEqualToConstant: *lineSize]
+        ]
          ];
         [self addHorizontal: lineSize lineSpacing: lineSpacing previuosBaseline: baseline];
     }
@@ -193,11 +167,11 @@ CGFloat lineSpacing = 4;
         [verticalSpacing addObject:spacing];
 
         [NSLayoutConstraint activateConstraints:@[
-                                                  [baseline.topAnchor constraintEqualToAnchor: self.view.topAnchor],
-                                                  [baseline.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
-                                                  [baseline.widthAnchor constraintEqualToConstant: *lineSize],
-                                                  spacing
-                                                  ]
+            [baseline.topAnchor constraintEqualToAnchor: self.view.topAnchor],
+            [baseline.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
+            [baseline.widthAnchor constraintEqualToConstant: *lineSize],
+            spacing
+        ]
          ];
 
         [self.view layoutSubviews];
@@ -212,45 +186,24 @@ CGFloat lineSpacing = 4;
         [verticalBaselines addObject:baseline];
 
         [NSLayoutConstraint activateConstraints:@[
-                                                  [baseline.topAnchor constraintEqualToAnchor: self.view.topAnchor],
-                                                  [baseline.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
-                                                  [baseline.widthAnchor constraintEqualToConstant: *lineSize],
-                                                  [baseline.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
-                                                  ]
+            [baseline.topAnchor constraintEqualToAnchor: self.view.topAnchor],
+            [baseline.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
+            [baseline.widthAnchor constraintEqualToConstant: *lineSize],
+            [baseline.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
+        ]
          ];
         [self addVertical: lineSize lineSpacing: lineSpacing previuosBaseline: baseline];
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [[AVAudioSession sharedInstance] addObserver:self forKeyPath: @"outputVolume" options: NSKeyValueObservingOptionNew context:nil];
-    [[AVAudioSession sharedInstance] setActive:true error:nil];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [[AVAudioSession sharedInstance] addObserver:self forKeyPath: @"outputVolume" options: NSKeyValueObservingOptionNew context:nil];
-    [[AVAudioSession sharedInstance] setActive:false error:nil];
-}
-
 - (nonnull UIView *)createBaselineAndAddView:(nonnull UIColor *)color {
-    UIView *baseline = [self createBaselineAndAddView: color];
-    [self addAndSendToBack: baseline];
-    return baseline;
-}
-
-- (nonnull UIView *)createBaselineView:(nonnull UIColor *)color {
     UIView *baseline = [[UIView alloc]init];
     baseline.translatesAutoresizingMaskIntoConstraints = false;
     baseline.backgroundColor = color;
     [baseline setUserInteractionEnabled:true];
-    return baseline;
-}
-
-- (void) addAndSendToBack:(nonnull UIView *)baseline {
     [self.view addSubview:baseline];
     [self.view sendSubviewToBack:baseline];
+    return baseline;
 }
 
 @end

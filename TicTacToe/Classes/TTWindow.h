@@ -9,6 +9,6 @@
 
 @interface TTWindow : UIWindow
 
-@property (nonatomic,strong) UIView *view;
+@property (nonatomic,strong) UIView * view;
 
 @end

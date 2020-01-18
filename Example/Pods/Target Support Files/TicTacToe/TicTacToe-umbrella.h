@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "TicTacToeViewController.h"
+#import "TTWindow.h"
+#import "UIView+Extensions.h"
 
 FOUNDATION_EXPORT double TicTacToeVersionNumber;
 FOUNDATION_EXPORT const unsigned char TicTacToeVersionString[];

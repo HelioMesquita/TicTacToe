@@ -7,6 +7,7 @@
 //
 
 #import "TTViewController.h"
+#import "TicTacToeViewController.h"
 
 @interface TTViewController ()
 
@@ -18,7 +19,7 @@
 {
     [super viewDidLoad];
 
-    [[Tic new]init];
+    [[TicTacToeViewController alloc]init];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

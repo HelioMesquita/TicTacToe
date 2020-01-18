@@ -24,7 +24,7 @@
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
     if (self.view != nil) {
-        CGPoint viewPoint = [self convertPoint:point toView:self.view];
+        CGPoint viewPoint = [self convertPoint:point toView: self.view];
         return [self.view pointInside:viewPoint withEvent:event];
     } else {
         return false;

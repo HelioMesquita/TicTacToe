@@ -248,6 +248,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Helio Mesquita";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = LMS2232J28;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -519,11 +522,12 @@
 			baseConfigurationReference = B4A7FD64A1906DA759CBA7D5 /* Pods-TicTacToe_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LMS2232J28;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TicTacToe/TicTacToe-Prefix.pch";
 				INFOPLIST_FILE = "TicTacToe/TicTacToe-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.TicTacToe-Example1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
@@ -535,11 +539,12 @@
 			baseConfigurationReference = CDAF26B6BC9567BDFF768630 /* Pods-TicTacToe_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LMS2232J28;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TicTacToe/TicTacToe-Prefix.pch";
 				INFOPLIST_FILE = "TicTacToe/TicTacToe-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.TicTacToe-Example1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
