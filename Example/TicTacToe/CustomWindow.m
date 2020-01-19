@@ -40,14 +40,23 @@
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     UIView * view = [super hitTest:point withEvent:event];
-    if (CGRectContainsPoint(self.tapView.frame, point)) {
+    if (CGRectContainsPoint(self.superiorTapView.frame, point)) {
         NSLog(@"click header");
-        return self.tapView;
+        return self.superiorTapView;
 
 //        for (UITouch *t in event.allTouches) {
 //            NSLog(@"B: touch: %@", t);
 //        }
     }
+
+    if (CGRectContainsPoint(self.inferiorTapView.frame, point)) {
+            NSLog(@"click footer");
+            return self.inferiorTapView;
+
+    //        for (UITouch *t in event.allTouches) {
+    //            NSLog(@"B: touch: %@", t);
+    //        }
+        }
     return view == self ? nil : view;
 }
 

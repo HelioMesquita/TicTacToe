@@ -22,7 +22,8 @@ typedef enum {
 } Baseline;
 
 CustomWindow * window;
-TapableView * tapView;
+TapableView * superiorTapView;
+TapableView * inferiorTapView;
 
 Baseline currentBaseline = OFF;
 
@@ -54,32 +55,55 @@ CGFloat lineSpacing = 4;
     [self addBaselines];
     [self setBaselineHidden:false];
     [self setBaselineSpacing:8];
+    [self.view setMultipleTouchEnabled:true];
 
 
     UITapGestureRecognizer *letterTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(highlightLetter:)];
-//    [letterTapRecognizer setNumberOfTapsRequired:2];
-    [letterTapRecognizer setNumberOfTouchesRequired:2];
+    [letterTapRecognizer setNumberOfTouchesRequired:1];
+//    [letterTapRecognizer setNumberOfTapsRequired:1];
+//    letterTapRecognizer.\
 
-    tapView = [[TapableView alloc]init];
-    [tapView addGestureRecognizer:letterTapRecognizer];
+    letterTapRecognizer.delegate = self;
 
-    window.tapView = tapView;
-    tapView.translatesAutoresizingMaskIntoConstraints = false;
-    tapView.backgroundColor = UIColor.redColor;
-    [tapView setUserInteractionEnabled:true];
-    [self.view addSubview:tapView];
-    [self.view sendSubviewToBack:tapView];
+
+    superiorTapView = [[TapableView alloc]init];
+    [superiorTapView addGestureRecognizer:letterTapRecognizer];
+    window.superiorTapView = superiorTapView;
+    superiorTapView.translatesAutoresizingMaskIntoConstraints = false;
+    superiorTapView.backgroundColor = UIColor.redColor;
+    [superiorTapView setUserInteractionEnabled:true];
+    [self.view addSubview:superiorTapView];
+    [self.view sendSubviewToBack:superiorTapView];
+
+    inferiorTapView = [[TapableView alloc]init];
+    [inferiorTapView addGestureRecognizer:letterTapRecognizer];
+    window.inferiorTapView = inferiorTapView;
+    inferiorTapView.translatesAutoresizingMaskIntoConstraints = false;
+    inferiorTapView.backgroundColor = UIColor.redColor;
+    [inferiorTapView setUserInteractionEnabled:true];
+    [self.view addSubview:inferiorTapView];
+    [self.view sendSubviewToBack:inferiorTapView];
 
     [NSLayoutConstraint activateConstraints:@[
-        [tapView.topAnchor constraintEqualToAnchor: self.view.topAnchor],
-        [tapView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
-        [tapView.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
-        [tapView.heightAnchor constraintEqualToConstant: 50]
+        [superiorTapView.topAnchor constraintEqualToAnchor: self.view.topAnchor],
+        [superiorTapView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
+        [superiorTapView.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
+        [superiorTapView.heightAnchor constraintEqualToConstant: 50]
+    ]
+     ];
+
+    [NSLayoutConstraint activateConstraints:@[
+        [inferiorTapView.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
+        [inferiorTapView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
+        [inferiorTapView.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
+        [inferiorTapView.heightAnchor constraintEqualToConstant: 50]
     ]
      ];
 }
 
-- (void)highlightLetter:(UITapGestureRecognizer*)sender {
+
+
+- (void)highlightLetter:(UIGestureRecognizer*)sender {
      UIView *view = sender.view;
      NSLog(@"%d", view.tag);//By tag, you can find out where you had tapped.
 }

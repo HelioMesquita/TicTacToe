@@ -13,6 +13,7 @@
 @interface CustomWindow : UIWindow
 
 @property (nonatomic,strong) UIView * view;
-@property (nonatomic,strong) TapableView * tapView;
+@property (nonatomic,strong) TapableView * superiorTapView;
+@property (nonatomic,strong) TapableView * inferiorTapView;
 
 @end

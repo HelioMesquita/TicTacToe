@@ -19,10 +19,5 @@
     self.backgroundColor = UIColor.redColor;
 }
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    UIView * view = [super hitTest:point withEvent:event];
-    return view == self ? nil : view;
-}
-
 
 @end
