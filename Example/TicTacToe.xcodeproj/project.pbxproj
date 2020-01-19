@@ -28,6 +28,7 @@
 		FD73695023D50DD8000EA59E /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD73694C23D50DD8000EA59E /* UIView+Extensions.m */; };
 		FD73695123D50DD8000EA59E /* TapableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD73694D23D50DD8000EA59E /* TapableView.m */; };
 		FD73695223D50DD8000EA59E /* CustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FD73694B23D50DD8000EA59E /* CustomWindow.m */; };
+		FD73695523D51CEC000EA59E /* CustomGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = FD73695323D51CEC000EA59E /* CustomGesture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		FD73694C23D50DD8000EA59E /* UIView+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extensions.m"; sourceTree = "<group>"; };
 		FD73694D23D50DD8000EA59E /* TapableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TapableView.m; sourceTree = "<group>"; };
 		FD73694E23D50DD8000EA59E /* TapableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TapableView.h; sourceTree = "<group>"; };
+		FD73695323D51CEC000EA59E /* CustomGesture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomGesture.m; sourceTree = "<group>"; };
+		FD73695423D51CEC000EA59E /* CustomGesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomGesture.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				FD73694C23D50DD8000EA59E /* UIView+Extensions.m */,
 				FD73694E23D50DD8000EA59E /* TapableView.h */,
 				FD73694D23D50DD8000EA59E /* TapableView.m */,
+				FD73695423D51CEC000EA59E /* CustomGesture.h */,
+				FD73695323D51CEC000EA59E /* CustomGesture.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -416,6 +421,7 @@
 				6003F59E195388D20070C39A /* TTAppDelegate.m in Sources */,
 				FD73694F23D50DD8000EA59E /* BaselineViewController.m in Sources */,
 				FD73695123D50DD8000EA59E /* TapableView.m in Sources */,
+				FD73695523D51CEC000EA59E /* CustomGesture.m in Sources */,
 				FD73695023D50DD8000EA59E /* UIView+Extensions.m in Sources */,
 				6003F5A7195388D20070C39A /* TTViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

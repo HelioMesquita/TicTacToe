@@ -8,6 +8,7 @@
 #import "BaselineViewController.h"
 #import "UIView+Extensions.h"
 #import "TapableView.h"
+#import "CustomGesture.h"
 
 @interface BaselineViewController ()
 
@@ -26,6 +27,8 @@ TapableView * superiorTapView;
 TapableView * inferiorTapView;
 
 Baseline currentBaseline = OFF;
+
+NSMutableArray * touchActions;
 
 NSMutableArray * horizontalBaselines;
 NSMutableArray * horizontalSpacing;
@@ -58,16 +61,8 @@ CGFloat lineSpacing = 4;
     [self.view setMultipleTouchEnabled:true];
 
 
-    UITapGestureRecognizer *letterTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(highlightLetter:)];
-    [letterTapRecognizer setNumberOfTouchesRequired:1];
-//    [letterTapRecognizer setNumberOfTapsRequired:1];
-//    letterTapRecognizer.\
-
-    letterTapRecognizer.delegate = self;
-
 
     superiorTapView = [[TapableView alloc]init];
-    [superiorTapView addGestureRecognizer:letterTapRecognizer];
     window.superiorTapView = superiorTapView;
     superiorTapView.translatesAutoresizingMaskIntoConstraints = false;
     superiorTapView.backgroundColor = UIColor.redColor;
@@ -76,7 +71,6 @@ CGFloat lineSpacing = 4;
     [self.view sendSubviewToBack:superiorTapView];
 
     inferiorTapView = [[TapableView alloc]init];
-    [inferiorTapView addGestureRecognizer:letterTapRecognizer];
     window.inferiorTapView = inferiorTapView;
     inferiorTapView.translatesAutoresizingMaskIntoConstraints = false;
     inferiorTapView.backgroundColor = UIColor.redColor;
@@ -101,11 +95,38 @@ CGFloat lineSpacing = 4;
      ];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    CGPoint locationPoint = [[touches anyObject] locationInView:self.view];
+    CGPoint viewPoint = [superiorTapView convertPoint:locationPoint fromView:self.view];
+    if ([superiorTapView pointInside:viewPoint withEvent:event]) {
+        NSLog(@"superior");
+        [touchActions addObject: superiorTapView];
+    }
 
+    CGPoint viewPoint2 = [inferiorTapView convertPoint:locationPoint fromView:self.view];
+    if ([inferiorTapView pointInside:viewPoint2 withEvent:event]) {
+        NSLog(@"inferior");
+        [touchActions addObject: inferiorTapView];
+    }
+}
 
-- (void)highlightLetter:(UIGestureRecognizer*)sender {
-     UIView *view = sender.view;
-     NSLog(@"%d", view.tag);//By tag, you can find out where you had tapped.
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (touchActions.count == 2) {
+        [self handleBaseline];
+    }
+
+    CGPoint locationPoint = [[touches anyObject] locationInView:self.view];
+    CGPoint viewPoint = [superiorTapView convertPoint:locationPoint fromView:self.view];
+    if ([superiorTapView pointInside:viewPoint withEvent:event]) {
+        [touchActions removeObject: superiorTapView];
+        NSLog(@"superior");
+    }
+
+    CGPoint viewPoint2 = [inferiorTapView convertPoint:locationPoint fromView:self.view];
+    if ([inferiorTapView pointInside:viewPoint2 withEvent:event]) {
+        NSLog(@"inferior");
+        [touchActions removeObject: inferiorTapView];
+    }
 }
 
 - (void)configure {
@@ -117,6 +138,8 @@ CGFloat lineSpacing = 4;
 
     verticalSpacing = [NSMutableArray array];
     verticalBaselines = [NSMutableArray array];
+
+    touchActions = [NSMutableArray array];
 }
 
 - (void)addBaselines {
