@@ -5,14 +5,15 @@
 //  Created by Hélio Mesquita on 14/01/20.
 //
 
-#import "TicTacToeViewController.h"
+#import "BaselineViewController.h"
 #import "UIView+Extensions.h"
+#import "TapableView.h"
 
-@interface TicTacToeViewController ()
+@interface BaselineViewController ()
 
 @end
 
-@implementation TicTacToeViewController
+@implementation BaselineViewController
 
 typedef enum {
     SPACING4,
@@ -20,8 +21,9 @@ typedef enum {
     OFF
 } Baseline;
 
-bool isVolumeControllerHidden = true;
-TTWindow * window;
+CustomWindow * window;
+TapableView * tapView;
+
 Baseline currentBaseline = OFF;
 
 NSMutableArray * horizontalBaselines;
@@ -36,7 +38,7 @@ CGFloat lineSpacing = 4;
 - (instancetype)init {
     self = [super initWithNibName: nil bundle: nil];
     if (self) {
-        window = [[TTWindow new]init];
+        window = [[CustomWindow new]init];
         window.windowLevel = UIWindowLevelAlert; //window.windowLevel = UIWindow.Level(floatLiteral: .greatestFiniteMagnitude)
         window.view = self.view;
         [window setHidden:NO];
@@ -50,12 +52,36 @@ CGFloat lineSpacing = 4;
     [super viewDidLoad];
     [self configure];
     [self addBaselines];
+    [self setBaselineHidden:false];
+    [self setBaselineSpacing:8];
+
+
+    UITapGestureRecognizer *letterTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(highlightLetter:)];
+//    [letterTapRecognizer setNumberOfTapsRequired:2];
+    [letterTapRecognizer setNumberOfTouchesRequired:2];
+
+    tapView = [[TapableView alloc]init];
+    [tapView addGestureRecognizer:letterTapRecognizer];
+
+    window.tapView = tapView;
+    tapView.translatesAutoresizingMaskIntoConstraints = false;
+    tapView.backgroundColor = UIColor.redColor;
+    [tapView setUserInteractionEnabled:true];
+    [self.view addSubview:tapView];
+    [self.view sendSubviewToBack:tapView];
+
+    [NSLayoutConstraint activateConstraints:@[
+        [tapView.topAnchor constraintEqualToAnchor: self.view.topAnchor],
+        [tapView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
+        [tapView.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
+        [tapView.heightAnchor constraintEqualToConstant: 50]
+    ]
+     ];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    AVAudioSession* audioSession = [AVAudioSession sharedInstance];
-    [audioSession setActive:YES error:nil];
-    [audioSession addObserver:self forKeyPath:@"outputVolume" options:0 context:nil];
+- (void)highlightLetter:(UITapGestureRecognizer*)sender {
+     UIView *view = sender.view;
+     NSLog(@"%d", view.tag);//By tag, you can find out where you had tapped.
 }
 
 - (void)configure {
@@ -73,12 +99,6 @@ CGFloat lineSpacing = 4;
     [self addVertical: &lineSize lineSpacing: &lineSpacing previuosBaseline:nil];
     [self addHorizontal: &lineSize lineSpacing: &lineSpacing previuosBaseline:nil];
     [self setBaselineHidden:true];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([keyPath  isEqualToString: @"outputVolume"]) {
-        [self handleBaseline];
-    }
 }
 
 - (void)handleBaseline {
