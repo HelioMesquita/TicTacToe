@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Popup: UIViewController, AnyPopupController {
+public class Popup: UIViewController {
 
     public var normalWindow: UIWindow
     public var popupWindow: UIWindow?
@@ -43,6 +43,38 @@ public class Popup: UIViewController, AnyPopupController {
         popupController.view.frame = UIScreen.main.bounds
         view.addSubview(popupController.view)
     }
+
+
+    func makeSelfKeyWindow() {
+        popupWindow = rightWindow()
+        popupWindow?.frame = UIScreen.main.bounds
+        popupWindow?.backgroundColor = .clear
+        popupWindow?.windowLevel = UIWindow.Level.statusBar + 1
+        popupWindow?.rootViewController = self as? UIViewController
+        popupWindow?.makeKeyAndVisible()
+    }
+
+    func rightWindow() -> UIWindow {
+        if JustPopupPreferences.shared.shouldFollowScenePattern {
+            let windowScene = UIApplication.shared
+                .connectedScenes
+                .filter { $0.activationState == .foregroundActive }
+                .first
+            if let windowScene = windowScene as? UIWindowScene {
+                return UIWindow(windowScene: windowScene)
+            }
+        }
+        return UIWindow()
+    }
+
+    func showPopup() {
+        makeSelfKeyWindow()
+
+            if let self_ = self as? UIViewController {
+                self.popupController.didMove(toParent: self_)
+            }
+    }
+
 
 }
 
