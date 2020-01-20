@@ -12,12 +12,12 @@ public class Popup: UIViewController {
 
     public var normalWindow: UIWindow
     public var popupWindow: UIWindow?
-    public var popupController: UIViewController!
+    public var gridController: UIViewController!
 
     public init() {
         self.normalWindow = UIApplication.topWindow()
         super.init(nibName: nil, bundle: nil)
-        popupController = GridViewController()
+        gridController = GridViewController()
         setupPopupController()
     }
 
@@ -31,9 +31,9 @@ public class Popup: UIViewController {
     }
 
     private func setupPopupController() {
-        addChild(popupController)
-        popupController.view.frame = UIScreen.main.bounds
-        view.addSubview(popupController.view)
+        addChild(gridController)
+        gridController.view.frame = UIScreen.main.bounds
+        view.addSubview(gridController.view)
     }
 
     func makeSelfKeyWindow() {
@@ -57,7 +57,7 @@ public class Popup: UIViewController {
 
     func showPopup() {
         makeSelfKeyWindow()
-        popupController?.didMove(toParent: self)
+        gridController?.didMove(toParent: self)
     }
 
 
@@ -65,10 +65,12 @@ public class Popup: UIViewController {
 
 private class GridViewController: UIViewController {
 
-    var gridView: UIView
+    var gridView: GridView
+    var actionsView: ActionsView
 
     public init() {
         self.gridView = GridView()
+        self.actionsView = ActionsView()
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -83,11 +85,63 @@ private class GridViewController: UIViewController {
 
 }
 
+class ActionsView: UIView {
+
+    let touchAreaHeight: CGFloat = 80;
+    var superiorView: UIView?
+    var inferiorView: UIView?
+
+    init() {
+        super.init(frame: UIScreen.main.bounds)
+        configure()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func configure() {
+        addSuperiorTapView()
+        addInferiorTapView()
+    }
+
+    func createView(_ color: UIColor) -> UIView {
+        let baseline = UIView()
+        baseline.translatesAutoresizingMaskIntoConstraints = false
+        baseline.backgroundColor = color
+        baseline.isUserInteractionEnabled = false
+        self.addSubview(baseline)
+        self.sendSubviewToBack(baseline)
+        return baseline
+    }
+
+    func addSuperiorTapView() {
+        let superiorView = createView(UIColor.clear)
+        self.superiorView = superiorView
+        NSLayoutConstraint.activate([
+            superiorView.topAnchor.constraint(equalTo: topAnchor),
+            superiorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            superiorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            superiorView.heightAnchor.constraint(equalToConstant: touchAreaHeight)
+        ])
+    }
+
+    func addInferiorTapView() {
+        let inferiorView = createView(UIColor.clear)
+        self.inferiorView = inferiorView
+        NSLayoutConstraint.activate([
+            inferiorView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            inferiorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            inferiorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            inferiorView.heightAnchor.constraint(equalToConstant: touchAreaHeight)
+        ])
+    }
+}
+
 class GridView: UIView {
 
     let lineSize: CGFloat = 1;
     let lineSpacing: CGFloat = 4;
-    let touchAreaHeight: CGFloat = 80;
 
     var horizontalBaselines: [UIView] = []
     var horizontalSpacing: [NSLayoutConstraint] = []
