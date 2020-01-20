@@ -16,10 +16,6 @@ public class Popup: UIViewController, AnyPopupController {
     public var normalWindow: UIWindow
     public var popupWindow: UIWindow?
     public var popupController: UIViewController!
-    public var animationDuration: TimeInterval = 0.3
-    public var presentationDuration: TimeInterval?
-    public var fadesBackground: Bool = true
-    public var dismissOnTap: Bool = false
 
     public init(_ view: UIView, fromWindow: UIWindow? = nil) {
         self.normalWindow = fromWindow ?? UIApplication.topWindow()
@@ -53,13 +49,6 @@ public class Popup: UIViewController, AnyPopupController {
         addChild(popupController)
         popupController.view.frame = UIScreen.main.bounds
         view.addSubview(popupController.view)
-    }
-
-    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        if dismissOnTap {
-            hidePopup()
-        }
     }
 
 }
