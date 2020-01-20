@@ -6,8 +6,6 @@
 //  Copyright © 2019 Mefodiy Akatov. All rights reserved.
 //
 
-#if canImport(UIKit)
-
 import UIKit
 
 public protocol AnyPopupController: class {
@@ -18,9 +16,6 @@ public protocol AnyPopupController: class {
 
 
     func showPopup()
-    func hidePopup()
-
-
 }
 
 public extension AnyPopupController {
@@ -47,12 +42,6 @@ public extension AnyPopupController {
         return UIWindow()
     }
 
-    func resignFromKeyWindow() {
-        popupWindow?.rootViewController = nil
-        popupWindow = nil
-        normalWindow.makeKeyAndVisible()
-    }
-
     func showPopup() {
         makeSelfKeyWindow()
 
@@ -60,14 +49,5 @@ public extension AnyPopupController {
                 self.popupController.didMove(toParent: self_)
             }
     }
-    
-    func hidePopup() {
-        let popupView = popupController.view
-        
-
-            self.resignFromKeyWindow()
-    }
 
 }
-
-#endif

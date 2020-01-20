@@ -31,10 +31,6 @@ public class Popup: UIViewController, AnyPopupController {
         setupPopupController()
     }
 
-    public convenience init<T: View>(_ view: T, fromWindow: UIWindow? = nil) {
-        self.init(UIHostingController(rootView: view), fromWindow: fromWindow)
-    }
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
