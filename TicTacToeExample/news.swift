@@ -180,109 +180,12 @@
 //    let lineSpacing: CGFloat = 4;
 //    let touchAreaHeight: CGFloat = 80;
 //
-//    var horizontalBaselines: [UIView] = []
-//    var horizontalSpacing: [NSLayoutConstraint] = []
-//    var verticalBaselines: [UIView] = []
-//    var verticalSpacing: [NSLayoutConstraint] = []
-//
-//    init() {
-//        super.init(frame: UIScreen.main.bounds)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-//    func configureView() {
-//        backgroundColor = UIColor.red
-//        isUserInteractionEnabled = false
-//    }
-//
 //    func addBaselines() {
 //        startBaselineVertical()
 //        startBaselineHorizontal()
 //        setBaselineHidden(true)
 //    }
 //
-//    func startBaselineVertical() {
-//        let verticalColor = UIColor.green.withAlphaComponent(0.3)
-//        let firstBaselineVertical = createView(verticalColor)
-//        verticalBaselines.append(firstBaselineVertical)
-//        NSLayoutConstraint.activate([
-//            firstBaselineVertical.topAnchor.constraint(equalTo: self.topAnchor),
-//            firstBaselineVertical.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-//            firstBaselineVertical.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//            firstBaselineVertical.widthAnchor.constraint(equalToConstant: lineSize)
-//        ])
-//        addVertical(firstBaselineVertical)
-//    }
-//
-//    func startBaselineHorizontal() {
-//        let horizontalColor = UIColor.purple.withAlphaComponent(0.3)
-//        let firstBaselineHorizontal = createView(horizontalColor)
-//        horizontalBaselines.append(firstBaselineHorizontal)
-//        NSLayoutConstraint.activate([
-//            firstBaselineHorizontal.topAnchor.constraint(equalTo: self.topAnchor),
-//            firstBaselineHorizontal.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//            firstBaselineHorizontal.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//            firstBaselineHorizontal.heightAnchor.constraint(equalToConstant: lineSize)
-//        ])
-//        addHorizontal(firstBaselineHorizontal)
-//    }
-//
-//    func setBaselineSpacing(_ value: CGFloat) {
-//        verticalSpacing.forEach { $0.constant = value }
-//        horizontalSpacing.forEach { $0.constant = value }
-//    }
-//
-//    func setBaselineHidden(_ isHidden: Bool) {
-//        verticalBaselines.forEach { $0.isHidden = isHidden }
-//        horizontalBaselines.forEach { $0.isHidden = isHidden }
-//    }
-//
-//    func addHorizontal(_ previuosBaseline: UIView) {
-//        let horizontalColor = UIColor.purple.withAlphaComponent(0.3)
-//        let baseline = createView(horizontalColor)
-//        let spacing = baseline.topAnchor.constraint(equalTo: previuosBaseline.topAnchor)
-//        horizontalBaselines.append(baseline)
-//        horizontalSpacing.append(spacing)
-//
-//        NSLayoutConstraint.activate([
-//            spacing,
-//            baseline.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//            baseline.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//            baseline.heightAnchor.constraint(equalToConstant: lineSize)
-//        ])
-//        layoutSubviews()
-//        if baseline.frame.maxY >= UIScreen.main.bounds.height {
-//            return
-//        } else {
-//            addHorizontal(baseline)
-//        }
-//    }
-//
-//    func addVertical(_ previuosBaseline: UIView) {
-//        let verticalColor = UIColor.green.withAlphaComponent(0.3)
-//        let baseline = createView(verticalColor)
-//        let spacing = baseline.leadingAnchor.constraint(equalTo: previuosBaseline.leadingAnchor, constant: lineSpacing)
-//
-//        verticalBaselines.append(baseline)
-//        verticalSpacing.append(spacing)
-//
-//        NSLayoutConstraint.activate([
-//            baseline.topAnchor.constraint(equalTo: topAnchor),
-//            baseline.bottomAnchor.constraint(equalTo: bottomAnchor),
-//            baseline.widthAnchor.constraint(equalToConstant: lineSize),
-//            spacing
-//        ])
-//
-//        layoutSubviews()
-//        if baseline.frame.maxX >= UIScreen.main.bounds.width {
-//            return
-//        } else {
-//            addVertical(baseline)
-//        }
-//    }
 //
 //    func createView(_ color: UIColor) -> UIView {
 //        let baseline = UIView()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FD23FB6B23D6521E00B17600 /* news.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23FB6A23D6521E00B17600 /* news.swift */; };
+		FD23FB6D23D661D300B17600 /* NewWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23FB6C23D661D300B17600 /* NewWindow.swift */; };
 		FD7D957123D630C300327CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D957023D630C300327CBF /* AppDelegate.swift */; };
 		FD7D957323D630C300327CBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D957223D630C300327CBF /* SceneDelegate.swift */; };
 		FD7D957523D630C300327CBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D957423D630C300327CBF /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		FD23FB6A23D6521E00B17600 /* news.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = news.swift; sourceTree = "<group>"; };
+		FD23FB6C23D661D300B17600 /* NewWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWindow.swift; sourceTree = "<group>"; };
 		FD7D956D23D630C300327CBF /* TicTacToeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7D957023D630C300327CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD7D957223D630C300327CBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				FD7D957B23D630C400327CBF /* LaunchScreen.storyboard */,
 				FD7D957E23D630C400327CBF /* Info.plist */,
 				FD23FB6A23D6521E00B17600 /* news.swift */,
+				FD23FB6C23D661D300B17600 /* NewWindow.swift */,
 			);
 			path = TicTacToeExample;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				FD7D95B023D6436C00327CBF /* Extensions.swift in Sources */,
 				FD23FB6B23D6521E00B17600 /* news.swift in Sources */,
 				FD7D95B223D6436C00327CBF /* JustPopupPreferences.swift in Sources */,
+				FD23FB6D23D661D300B17600 /* NewWindow.swift in Sources */,
 				FD7D957523D630C300327CBF /* ViewController.swift in Sources */,
 				FD7D957123D630C300327CBF /* AppDelegate.swift in Sources */,
 				FD7D957323D630C300327CBF /* SceneDelegate.swift in Sources */,

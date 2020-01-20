@@ -31,14 +31,7 @@ class ViewController: UIViewController {
 
     @objc private func showPopup() {
         JustPopupPreferences.shared.shouldFollowScenePattern = true
-        let simpleView = GridView()
-        simpleView.configureView()
-        simpleView.addBaselines()
-//        simpleView.backgroundColor = .systemOrange
-        let popup = Popup()
-
-
-        popup.showPopup()
+        Popup().showPopup()
     }
 
 
