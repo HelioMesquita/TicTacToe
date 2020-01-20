@@ -14,19 +14,19 @@ public class Popup: UIViewController {
     public var popupWindow: UIWindow?
     public var popupController: UIViewController!
 
-    public init(_ view: UIView, fromWindow: UIWindow? = nil) {
-        self.normalWindow = fromWindow ?? UIApplication.topWindow()
+    public init() {
+        self.normalWindow = UIApplication.topWindow()
         super.init(nibName: nil, bundle: nil)
-        popupController = PopupViewController(popupView: view)
+        popupController = GridViewController()
         setupPopupController()
     }
 
-    public init(_ popupController: UIViewController, fromWindow: UIWindow? = nil) {
-        self.normalWindow = fromWindow ?? UIApplication.topWindow()
-        self.popupController = popupController
-        super.init(nibName: nil, bundle: nil)
-        setupPopupController()
-    }
+//    public init(_ popupController: UIViewController, fromWindow: UIWindow? = nil) {
+//        self.normalWindow = fromWindow ?? UIApplication.topWindow()
+//        self.popupController = popupController
+//        super.init(nibName: nil, bundle: nil)
+//        setupPopupController()
+//    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -44,22 +44,18 @@ public class Popup: UIViewController {
         view.addSubview(popupController.view)
     }
 
-
     func makeSelfKeyWindow() {
         popupWindow = rightWindow()
         popupWindow?.frame = UIScreen.main.bounds
         popupWindow?.backgroundColor = .clear
         popupWindow?.windowLevel = UIWindow.Level.statusBar + 1
-        popupWindow?.rootViewController = self as? UIViewController
+        popupWindow?.rootViewController = self
         popupWindow?.makeKeyAndVisible()
     }
 
     func rightWindow() -> UIWindow {
         if JustPopupPreferences.shared.shouldFollowScenePattern {
-            let windowScene = UIApplication.shared
-                .connectedScenes
-                .filter { $0.activationState == .foregroundActive }
-                .first
+            let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive })
             if let windowScene = windowScene as? UIWindowScene {
                 return UIWindow(windowScene: windowScene)
             }
@@ -69,21 +65,18 @@ public class Popup: UIViewController {
 
     func showPopup() {
         makeSelfKeyWindow()
-
-            if let self_ = self as? UIViewController {
-                self.popupController.didMove(toParent: self_)
-            }
+        popupController?.didMove(toParent: self)
     }
 
 
 }
 
-private class PopupViewController: UIViewController {
+private class GridViewController: UIViewController {
 
-    var popupView: UIView
+    var gridView: UIView
 
-    public init(popupView: UIView) {
-        self.popupView = popupView
+    public init() {
+        self.gridView = GridView()
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -93,7 +86,7 @@ private class PopupViewController: UIViewController {
 
     public override func loadView() {
         super.loadView()
-        view = popupView
+        view = gridView
     }
 
 }
@@ -111,6 +104,8 @@ class GridView: UIView {
 
     init() {
         super.init(frame: UIScreen.main.bounds)
+        configureView()
+        addBaselines()
     }
 
     required init?(coder: NSCoder) {
@@ -142,10 +137,9 @@ class GridView: UIView {
         ])
 
         for _ in 1...numberOfDivisions {
-            let baseline = createView(verticalColor)
             guard let previuosBaseline = verticalBaselines.last else { continue }
+            let baseline = createView(verticalColor)
             let spacing = baseline.leadingAnchor.constraint(equalTo: previuosBaseline.leadingAnchor, constant: lineSpacing)
-
             verticalBaselines.append(baseline)
             verticalSpacing.append(spacing)
 
@@ -172,8 +166,8 @@ class GridView: UIView {
         ])
 
         for _ in 1...numberOfDivisions {
-            let baseline = createView(horizontalColor)
             guard let previuosBaseline = horizontalBaselines.last else { continue }
+            let baseline = createView(horizontalColor)
             let spacing = baseline.topAnchor.constraint(equalTo: previuosBaseline.topAnchor, constant: lineSpacing)
             horizontalBaselines.append(baseline)
             horizontalSpacing.append(spacing)

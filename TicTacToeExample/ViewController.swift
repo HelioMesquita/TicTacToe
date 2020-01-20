@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         simpleView.configureView()
         simpleView.addBaselines()
 //        simpleView.backgroundColor = .systemOrange
-        let popup = Popup(simpleView)
+        let popup = Popup()
 
 
         popup.showPopup()
