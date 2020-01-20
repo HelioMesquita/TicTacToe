@@ -10,7 +10,6 @@
 		FD7D957123D630C300327CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D957023D630C300327CBF /* AppDelegate.swift */; };
 		FD7D957323D630C300327CBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D957223D630C300327CBF /* SceneDelegate.swift */; };
 		FD7D957523D630C300327CBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D957423D630C300327CBF /* ViewController.swift */; };
-		FD7D957823D630C300327CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7D957623D630C300327CBF /* Main.storyboard */; };
 		FD7D957A23D630C400327CBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7D957923D630C400327CBF /* Assets.xcassets */; };
 		FD7D957D23D630C400327CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7D957B23D630C400327CBF /* LaunchScreen.storyboard */; };
 		FD7D958D23D6315A00327CBF /* TicTacToe.h in Headers */ = {isa = PBXBuildFile; fileRef = FD7D958B23D6315A00327CBF /* TicTacToe.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,6 +19,12 @@
 		FD7D959823D6319E00327CBF /* TicTacToeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FD7D959423D6317500327CBF /* TicTacToeViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD7D959A23D631B400327CBF /* TicTacToe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7D958923D6315A00327CBF /* TicTacToe.framework */; };
 		FD7D959B23D631B400327CBF /* TicTacToe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD7D958923D6315A00327CBF /* TicTacToe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD7D95AF23D6436C00327CBF /* PopupAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D95A923D6436C00327CBF /* PopupAnimationType.swift */; };
+		FD7D95B023D6436C00327CBF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D95AA23D6436C00327CBF /* Extensions.swift */; };
+		FD7D95B123D6436C00327CBF /* PopupSwiftUIAnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D95AB23D6436C00327CBF /* PopupSwiftUIAnimatedView.swift */; };
+		FD7D95B223D6436C00327CBF /* JustPopupPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D95AC23D6436C00327CBF /* JustPopupPreferences.swift */; };
+		FD7D95B323D6436C00327CBF /* AnyPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D95AD23D6436C00327CBF /* AnyPopupController.swift */; };
+		FD7D95B423D6436C00327CBF /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D95AE23D6436C00327CBF /* Popup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +56,6 @@
 		FD7D957023D630C300327CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD7D957223D630C300327CBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FD7D957423D630C300327CBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FD7D957723D630C300327CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD7D957923D630C400327CBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD7D957C23D630C400327CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD7D957E23D630C400327CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +66,12 @@
 		FD7D959223D6317500327CBF /* TicTacToeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicTacToeViewController.m; sourceTree = "<group>"; };
 		FD7D959323D6317500327CBF /* TicTaeToeWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicTaeToeWindow.h; sourceTree = "<group>"; };
 		FD7D959423D6317500327CBF /* TicTacToeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicTacToeViewController.h; sourceTree = "<group>"; };
+		FD7D95A923D6436C00327CBF /* PopupAnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupAnimationType.swift; sourceTree = "<group>"; };
+		FD7D95AA23D6436C00327CBF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FD7D95AB23D6436C00327CBF /* PopupSwiftUIAnimatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupSwiftUIAnimatedView.swift; sourceTree = "<group>"; };
+		FD7D95AC23D6436C00327CBF /* JustPopupPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JustPopupPreferences.swift; sourceTree = "<group>"; };
+		FD7D95AD23D6436C00327CBF /* AnyPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyPopupController.swift; sourceTree = "<group>"; };
+		FD7D95AE23D6436C00327CBF /* Popup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +115,15 @@
 		FD7D956F23D630C300327CBF /* TicTacToeExample */ = {
 			isa = PBXGroup;
 			children = (
+				FD7D95AA23D6436C00327CBF /* Extensions.swift */,
+				FD7D95AC23D6436C00327CBF /* JustPopupPreferences.swift */,
+				FD7D95AD23D6436C00327CBF /* AnyPopupController.swift */,
+				FD7D95AE23D6436C00327CBF /* Popup.swift */,
+				FD7D95AB23D6436C00327CBF /* PopupSwiftUIAnimatedView.swift */,
+				FD7D95A923D6436C00327CBF /* PopupAnimationType.swift */,
 				FD7D957023D630C300327CBF /* AppDelegate.swift */,
 				FD7D957223D630C300327CBF /* SceneDelegate.swift */,
 				FD7D957423D630C300327CBF /* ViewController.swift */,
-				FD7D957623D630C300327CBF /* Main.storyboard */,
 				FD7D957923D630C400327CBF /* Assets.xcassets */,
 				FD7D957B23D630C400327CBF /* LaunchScreen.storyboard */,
 				FD7D957E23D630C400327CBF /* Info.plist */,
@@ -233,7 +248,6 @@
 			files = (
 				FD7D957D23D630C400327CBF /* LaunchScreen.storyboard in Resources */,
 				FD7D957A23D630C400327CBF /* Assets.xcassets in Resources */,
-				FD7D957823D630C300327CBF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD7D95B423D6436C00327CBF /* Popup.swift in Sources */,
+				FD7D95B123D6436C00327CBF /* PopupSwiftUIAnimatedView.swift in Sources */,
+				FD7D95B023D6436C00327CBF /* Extensions.swift in Sources */,
+				FD7D95B223D6436C00327CBF /* JustPopupPreferences.swift in Sources */,
+				FD7D95B323D6436C00327CBF /* AnyPopupController.swift in Sources */,
 				FD7D957523D630C300327CBF /* ViewController.swift in Sources */,
+				FD7D95AF23D6436C00327CBF /* PopupAnimationType.swift in Sources */,
 				FD7D957123D630C300327CBF /* AppDelegate.swift in Sources */,
 				FD7D957323D630C300327CBF /* SceneDelegate.swift in Sources */,
 			);
@@ -277,14 +297,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FD7D957623D630C300327CBF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD7D957723D630C300327CBF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FD7D957B23D630C400327CBF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
