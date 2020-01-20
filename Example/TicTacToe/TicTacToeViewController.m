@@ -28,8 +28,10 @@ UIView * inferiorView;
 Baseline currentBaseline = OFF;
 CGFloat lineSize = 1;
 CGFloat lineSpacing = 4;
-CGFloat touchAreaHeight = 50;
+CGFloat touchAreaHeight = 80;
 
+UIColor * horizontalColor;
+UIColor * verticalColor;
 NSMutableArray * horizontalBaselines;
 NSMutableArray * horizontalSpacing;
 NSMutableArray * verticalBaselines;
@@ -39,10 +41,11 @@ NSMutableArray * verticalSpacing;
     self = [super initWithNibName: nil bundle: nil];
     if (self) {
         window = [[TicTaeToeWindow new]init];
-        window.windowLevel = UIWindowLevelAlert +1;
+        window.windowLevel = UIWindowLevelStatusBar+1;
         [window setHidden:NO];
         [window setRootViewController: self];
         [window setUserInteractionEnabled:YES];
+        [window makeKeyAndVisible];
     }
     return self;
 }
@@ -73,7 +76,8 @@ NSMutableArray * verticalSpacing;
 }
 
 - (void)startBaselineVertical {
-    UIView * firstBaselineVertical = [self createView: UIColor.purpleColor];
+    verticalColor = [UIColor.greenColor colorWithAlphaComponent:0.3];
+    UIView * firstBaselineVertical = [self createView: verticalColor];
     [verticalBaselines addObject: firstBaselineVertical];
     [NSLayoutConstraint activateConstraints:@[
         [firstBaselineVertical.topAnchor constraintEqualToAnchor: self.view.topAnchor],
@@ -86,7 +90,8 @@ NSMutableArray * verticalSpacing;
 }
 
 - (void)startBaselineHorizontal {
-    UIView * firstBaselineHorizontal = [self createView: UIColor.greenColor];
+    horizontalColor = [UIColor.purpleColor colorWithAlphaComponent:0.3];
+    UIView * firstBaselineHorizontal = [self createView: horizontalColor];
     [horizontalBaselines addObject:firstBaselineHorizontal];
     [NSLayoutConstraint activateConstraints:@[
         [firstBaselineHorizontal.topAnchor constraintEqualToAnchor: self.view.topAnchor],
@@ -162,7 +167,7 @@ NSMutableArray * verticalSpacing;
 }
 
 - (void)addHorizontal:(nonnull UIView *)previuosBaseline {
-        UIView *baseline = [self createView: UIColor.greenColor];
+        UIView *baseline = [self createView: horizontalColor];
         NSLayoutConstraint *spacing = [baseline.topAnchor constraintEqualToAnchor:previuosBaseline.topAnchor constant:lineSpacing];
 
         [horizontalBaselines addObject:baseline];
@@ -185,7 +190,7 @@ NSMutableArray * verticalSpacing;
 }
 
 - (void)addVertical:(nonnull UIView *)previuosBaseline {
-        UIView *baseline = [self createView: UIColor.purpleColor];
+        UIView *baseline = [self createView: verticalColor];
         NSLayoutConstraint *spacing = [baseline.leadingAnchor constraintEqualToAnchor:previuosBaseline.leadingAnchor constant:lineSpacing];
 
         [verticalBaselines addObject:baseline];
