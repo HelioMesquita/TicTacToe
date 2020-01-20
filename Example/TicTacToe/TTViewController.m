@@ -7,7 +7,7 @@
 //
 
 #import "TTViewController.h"
-#import "BaselineViewController.h"
+#import "TicTacToeViewController.h"
 
 
 @interface TTViewController ()
@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
 
-    [[BaselineViewController alloc]init];
+    [[TicTacToeViewController alloc]init];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
