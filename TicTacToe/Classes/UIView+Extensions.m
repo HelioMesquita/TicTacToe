@@ -1,20 +1,18 @@
-////
-////  UIViewController+TicTacToeViewController.m
-////  TicTacToe
-////
-////  Created by Hélio Mesquita on 14/01/20.
-////
 //
+//  UIView+Extensions.m
+//  TicTacToe
 //
-//// UIView+Extensions.m
-//@implementation UIView(Extensions)
+//  Created by Hélio Mesquita on 14/01/20.
 //
-//- (CGFloat)maxY {
-//    return CGRectGetMaxY(self.frame);
-//}
-//
-//- (CGFloat)maxX {
-//    return CGRectGetMaxX(self.frame);
-//}
-//
-//@end
+
+@implementation UIView(Extensions)
+
+- (CGFloat)maxY {
+    return CGRectGetMaxY(self.frame);
+}
+
+- (CGFloat)maxX {
+    return CGRectGetMaxX(self.frame);
+}
+
+@end

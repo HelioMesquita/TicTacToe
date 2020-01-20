@@ -24,9 +24,6 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		FD73694F23D50DD8000EA59E /* TicTacToeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD73694A23D50DD8000EA59E /* TicTacToeViewController.m */; };
-		FD73695023D50DD8000EA59E /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD73694C23D50DD8000EA59E /* UIView+Extensions.m */; };
-		FD73695223D50DD8000EA59E /* TicTaeToeWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FD73694B23D50DD8000EA59E /* TicTaeToeWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,12 +67,6 @@
 		BBD78F1272966BC2736E7C33 /* TicTacToe.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TicTacToe.podspec; path = ../TicTacToe.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CDAF26B6BC9567BDFF768630 /* Pods-TicTacToe_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe_Example.release.xcconfig"; path = "Target Support Files/Pods-TicTacToe_Example/Pods-TicTacToe_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CE5017CC46998E4FBEEFD7CF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		FD73694723D50DD8000EA59E /* TicTaeToeWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicTaeToeWindow.h; sourceTree = "<group>"; };
-		FD73694823D50DD8000EA59E /* UIView+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extensions.h"; sourceTree = "<group>"; };
-		FD73694923D50DD8000EA59E /* TicTacToeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicTacToeViewController.h; sourceTree = "<group>"; };
-		FD73694A23D50DD8000EA59E /* TicTacToeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicTacToeViewController.m; sourceTree = "<group>"; };
-		FD73694B23D50DD8000EA59E /* TicTaeToeWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicTaeToeWindow.m; sourceTree = "<group>"; };
-		FD73694C23D50DD8000EA59E /* UIView+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				FDF901EC23D53A1D00D2F1CB /* App */,
-				FDF901EB23D539AC00D2F1CB /* TicTaeToe */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -203,18 +193,6 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		FDF901EB23D539AC00D2F1CB /* TicTaeToe */ = {
-			isa = PBXGroup;
-			children = (
-				FDF901ED23D53A2E00D2F1CB /* Extensions */,
-				FD73694923D50DD8000EA59E /* TicTacToeViewController.h */,
-				FD73694A23D50DD8000EA59E /* TicTacToeViewController.m */,
-				FD73694723D50DD8000EA59E /* TicTaeToeWindow.h */,
-				FD73694B23D50DD8000EA59E /* TicTaeToeWindow.m */,
-			);
-			name = TicTaeToe;
-			sourceTree = "<group>";
-		};
 		FDF901EC23D53A1D00D2F1CB /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,15 +202,6 @@
 				6003F5A6195388D20070C39A /* TTViewController.m */,
 			);
 			name = App;
-			sourceTree = "<group>";
-		};
-		FDF901ED23D53A2E00D2F1CB /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				FD73694823D50DD8000EA59E /* UIView+Extensions.h */,
-				FD73694C23D50DD8000EA59E /* UIView+Extensions.m */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,10 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD73695223D50DD8000EA59E /* TicTaeToeWindow.m in Sources */,
 				6003F59E195388D20070C39A /* TTAppDelegate.m in Sources */,
-				FD73694F23D50DD8000EA59E /* TicTacToeViewController.m in Sources */,
-				FD73695023D50DD8000EA59E /* UIView+Extensions.m in Sources */,
 				6003F5A7195388D20070C39A /* TTViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

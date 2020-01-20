@@ -7,7 +7,6 @@
 //
 
 #import "TTViewController.h"
-#import "TicTacToeViewController.h"
 
 
 @interface TTViewController ()

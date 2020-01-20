@@ -15,7 +15,6 @@
 		08AEFF25BCA9DCCE51F76FD3CE8D3C74 /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A36A6648C2FE7B3134B412E15F58CA3 /* UIImage+Compare.m */; };
 		0DE0AA588BC61692033B67CFCE4EC742 /* EXPMatchers+beSubclassOf.h in Headers */ = {isa = PBXBuildFile; fileRef = A2B2AF6D85DF7A1D563ED17D82949095 /* EXPMatchers+beSubclassOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F200814CB7DB37FAB5CCB2DB5B61E3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB8CC683290F4D17FEDFC772BCB48EE /* Foundation.framework */; };
-		0F2C21C83F84F3EF19EA47C6F3FE7A9F /* CustomWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 27006164FCBE044EC1408621C35B5C29 /* CustomWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		114C2163DAE74196CAF6FA2E5FB633D7 /* NSObject+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = E1DE1A8DD615F4C2034BD92730526CD0 /* NSObject+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		120E665E9979FF968802071787DA8848 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A330379CAB29C00FEA5BBD48341C045 /* FBSnapshotTestCase.framework */; };
 		12C14FE4834134BC916F8DD42B875D3B /* EXPMatchers+beLessThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = E375E10BD6F99F5734977CCB0654295C /* EXPMatchers+beLessThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -96,10 +95,8 @@
 		873165886F20870B205EBE37F8185546 /* EXPMatchers+beNil.h in Headers */ = {isa = PBXBuildFile; fileRef = 9804CF913ED8446C2C5452E5418046C3 /* EXPMatchers+beNil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B8CB2F1361DD1EA4711D54F596569F4 /* EXPMatcherHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 462CDEE5FC3BC88A62A0EE4FEFF28791 /* EXPMatcherHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D20418AEDA0213FD3E324F26FA60FEB /* SPTExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 41A002983C20BFD2D9976FE34A5655CA /* SPTExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F38E60DCE59BEDC00A512C07167A1EE /* UIView+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 430321862022BFEAD5C9BB16EE8FD765 /* UIView+Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9197B1917CC94F46B7ECF956F9E42AAC /* EXPMatchers+FBSnapshotTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 65A3F9059119E1A5287A88950D44F6D0 /* EXPMatchers+FBSnapshotTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91F08081D0286CC0733C2D5A9B4A8F32 /* EXPMatchers+raise.m in Sources */ = {isa = PBXBuildFile; fileRef = A356660F98816BACDD0327D1F8CD2B7A /* EXPMatchers+raise.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		92B7929784CFD0741C106516942DC9C9 /* CustomWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9A55297252A9F3EA5EDBA58B1BC03 /* CustomWindow.m */; };
 		9501262D83639D5412AC3A86F528B63D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB8CC683290F4D17FEDFC772BCB48EE /* Foundation.framework */; };
 		96BC54118F99CACBCEDE0B64784E0737 /* Expecta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F61FF935488C1CDD4A230DC136453EFA /* Expecta-dummy.m */; };
 		96D66D58D29B61E0626A78A6C62B0A1D /* SPTSharedExampleGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = 87E375A9819F95D66C415826F98C64E1 /* SPTSharedExampleGroups.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -110,7 +107,6 @@
 		9AC1A3902FC9162C9B432B411928B215 /* EXPMatchers+beLessThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 371FB56AC36C47DB182138BC4A0221B2 /* EXPMatchers+beLessThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9FA92269C76E56CD70FB8C0AB47AD16D /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB12CB75DBCCF19D7FBBC490B896872 /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0FB558C12CC98F95A448699D80E54CA /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A97ECCDEE7F27973198D2C2C88107A /* SwiftSupport.swift */; };
-		A11358AEAAEE7D83356102C63F89D9E4 /* BaselineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33305C4175F2F05B49DA01C57C0F8AB /* BaselineViewController.m */; };
 		A6A49734BE2CA7A10109D9A0F6E79AAA /* SPTTestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = F919EF3503C402CC5F7A4C3DB6193377 /* SPTTestSuite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ACBDE7479CEDFD9F3261E26D6B1015FC /* EXPMatchers+haveCountOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4825F999D0804E1F8AD53546928C3B /* EXPMatchers+haveCountOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD96736DFA1A1A28B31F13E7818FCFE2 /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = FF453CC0D321E182D58A17C8CBA7C761 /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -135,7 +131,6 @@
 		CA004C816B835986CB7FD1AF44E0DFD1 /* SPTExcludeGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = 85DCF775086F309A2C9E451B03F39222 /* SPTExcludeGlobalBeforeAfterEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA17B8E5FFF13F7681D42AF5D6F1F1B0 /* XCTestCase+Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = 51A8DE0FA07C133F3F9B1194A3EB7055 /* XCTestCase+Specta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAEE0E44BC37459BD49C0B1D626B0477 /* EXPMatchers+postNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4CAF2BB2132ECA2E445AB24D7E5DE3 /* EXPMatchers+postNotification.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CEAC2C6B3102177BAB2B68693F258F9A /* BaselineViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D7974D0C2F7F11D2412E2A696FF06FE4 /* BaselineViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D327EEB8522F6389513EB84ACF12F242 /* EXPMatchers+endWith.m in Sources */ = {isa = PBXBuildFile; fileRef = 6054AB7FD0D1B8838A071D22F2A06C04 /* EXPMatchers+endWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D51C60EA7267DE5CB83AAACC47C420AD /* Pods-TicTacToe_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC59DB1AAED8CF6A523EB9FFB361465B /* Pods-TicTacToe_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5C3E91A2121AE27F99028292B9436A8 /* EXPMatchers+postNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = AF7FC6DD0FF32838D557850FBD111B68 /* EXPMatchers+postNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -153,17 +148,18 @@
 		EC57F974317D76B799CFE2A018B5F9E2 /* EXPMatchers+beNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 82444FE7B781A7F0B838CDE72B451F41 /* EXPMatchers+beNil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EFEE0CA67BDA8D1262278A217868C3DF /* Specta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 802A79D03CA637757B23759EF0A44B14 /* Specta-dummy.m */; };
 		F09FCB8DAF0FF5CDCAF6AE872142922E /* FBSnapshotTestCase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ECF4B68CD96419614FCC01928BE7AB0 /* FBSnapshotTestCase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0AB82EAA0D3054952EB5CAF312EB7AA /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D67CC97B4739575FF70F5D9B9ACB715D /* UIView+Extensions.m */; };
 		F116C8ABE9A02F5D87080EAB65563F09 /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F83EB6595C7B9AAE1D1B1A3BF3BEC42 /* FBSnapshotTestController.m */; };
 		F31CCBB90D75D9E5A83545FD95954FFA /* EXPMatchers+beCloseTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9D510F429EA0688A435B7AE01EAB2B /* EXPMatchers+beCloseTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F3EDE6D241EE2A6D0992A24ACDDBAB35 /* EXPFloatTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E53B23A152FCFB31E04A5BC4BD00DA /* EXPFloatTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F4591B9C7F70268A3F94B40ADDBA5202 /* EXPMatchers+beIdenticalTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 91291ADAA7B00BFFAE60956D01ABE2F9 /* EXPMatchers+beIdenticalTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F4F8BAEA1C2B92CD3CE72DA5019E3D6E /* Expecta+Snapshots-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 774C7F1A9A647A467A5847359F0DAD5D /* Expecta+Snapshots-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FBC9734FF84807AE5347B2196D7EBC6D /* EXPMatchers+equal.h in Headers */ = {isa = PBXBuildFile; fileRef = 2996A6217D5E2D993AF9E137D97446D4 /* EXPMatchers+equal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD73694123D5050D000EA59E /* TapableView.h in Headers */ = {isa = PBXBuildFile; fileRef = FD73693F23D5050D000EA59E /* TapableView.h */; };
-		FD73694223D5050D000EA59E /* TapableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD73694023D5050D000EA59E /* TapableView.m */; };
-		FD73694523D50799000EA59E /* ActionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FD73694323D50799000EA59E /* ActionViewController.h */; };
-		FD73694623D50799000EA59E /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD73694423D50799000EA59E /* ActionViewController.m */; };
+		FDF9022223D56A3F00D2F1CB /* TicTaeToeWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = FDF9021C23D56A3F00D2F1CB /* TicTaeToeWindow.h */; };
+		FDF9022323D56A3F00D2F1CB /* TicTaeToeWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF9021D23D56A3F00D2F1CB /* TicTaeToeWindow.m */; };
+		FDF9022423D56A3F00D2F1CB /* TicTacToeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF9021E23D56A3F00D2F1CB /* TicTacToeViewController.m */; };
+		FDF9022523D56A3F00D2F1CB /* TicTacToeViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = FDF9021F23D56A3F00D2F1CB /* TicTacToeViewController.h */; };
+		FDF9022623D56A3F00D2F1CB /* UIView+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = FDF9022023D56A3F00D2F1CB /* UIView+Extensions.h */; };
+		FDF9022723D56A3F00D2F1CB /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF9022123D56A3F00D2F1CB /* UIView+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,7 +252,6 @@
 		20B68C9269B45825E82F4F5ECE0EB27C /* Expecta_Snapshots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Expecta_Snapshots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2188C4FDF87D3E997EA5682166354605 /* Pods-TicTacToe_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TicTacToe_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2337D72B385D34C88E0A80DA789A8983 /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
-		27006164FCBE044EC1408621C35B5C29 /* CustomWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CustomWindow.h; path = TicTacToe/Classes/CustomWindow.h; sourceTree = "<group>"; };
 		2996A6217D5E2D993AF9E137D97446D4 /* EXPMatchers+equal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+equal.h"; path = "Expecta/Matchers/EXPMatchers+equal.h"; sourceTree = "<group>"; };
 		2B68EC3A7D03997CA14E462F2B3EF9DF /* EXPMatchers+FBSnapshotTest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EXPMatchers+FBSnapshotTest.m"; sourceTree = "<group>"; };
 		2BA826B20D52A8F2FE42BB718056D1D8 /* ExpectaObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ExpectaObject.h; path = Expecta/ExpectaObject.h; sourceTree = "<group>"; };
@@ -280,7 +275,6 @@
 		3AD3D9C09C1B5FBEE31FDDD450ECC5A5 /* EXPMatchers+beTruthy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beTruthy.m"; path = "Expecta/Matchers/EXPMatchers+beTruthy.m"; sourceTree = "<group>"; };
 		3F3E321F0270E6614254493A25B0EB3C /* EXPMatchers+beLessThan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThan.h"; path = "Expecta/Matchers/EXPMatchers+beLessThan.h"; sourceTree = "<group>"; };
 		41A002983C20BFD2D9976FE34A5655CA /* SPTExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExample.h; path = Specta/Specta/SPTExample.h; sourceTree = "<group>"; };
-		430321862022BFEAD5C9BB16EE8FD765 /* UIView+Extensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Extensions.h"; path = "TicTacToe/Classes/UIView+Extensions.h"; sourceTree = "<group>"; };
 		43ED3DE30FC200EDBCDBFAF68404B78A /* EXPBlockDefinedMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPBlockDefinedMatcher.m; path = Expecta/EXPBlockDefinedMatcher.m; sourceTree = "<group>"; };
 		44F0CF3F420E5310819B81738FA9D688 /* EXPMatchers+match.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+match.m"; path = "Expecta/Matchers/EXPMatchers+match.m"; sourceTree = "<group>"; };
 		45AE1B3E9D5789E7A4F683B61B460362 /* ExpectaSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ExpectaSupport.m; path = Expecta/ExpectaSupport.m; sourceTree = "<group>"; };
@@ -338,7 +332,6 @@
 		8FC3A919F6495C92F3A0C506A40C4DDE /* Pods-TicTacToe_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TicTacToe_Tests-dummy.m"; sourceTree = "<group>"; };
 		9119D7EE9550AA0B4D7B2AD190064540 /* SPTCallSite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCallSite.h; path = Specta/Specta/SPTCallSite.h; sourceTree = "<group>"; };
 		91291ADAA7B00BFFAE60956D01ABE2F9 /* EXPMatchers+beIdenticalTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beIdenticalTo.m"; path = "Expecta/Matchers/EXPMatchers+beIdenticalTo.m"; sourceTree = "<group>"; };
-		91A9A55297252A9F3EA5EDBA58B1BC03 /* CustomWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CustomWindow.m; path = TicTacToe/Classes/CustomWindow.m; sourceTree = "<group>"; };
 		9235FE008E33E64019680F2C27E1C27D /* EXPMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPMatcher.h; path = Expecta/EXPMatcher.h; sourceTree = "<group>"; };
 		931CB49D222F271D15CA5FD53CA16F9E /* Pods-TicTacToe_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TicTacToe_Example-dummy.m"; sourceTree = "<group>"; };
 		9443DE508E39FB0CA1686F2104767961 /* EXPMatcherHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPMatcherHelpers.m; path = Expecta/Matchers/EXPMatcherHelpers.m; sourceTree = "<group>"; };
@@ -361,7 +354,6 @@
 		ADEBFC66418A2CF0AFED343FAD173D61 /* Specta-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Specta-prefix.pch"; sourceTree = "<group>"; };
 		AE4CAF2BB2132ECA2E445AB24D7E5DE3 /* EXPMatchers+postNotification.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+postNotification.m"; path = "Expecta/Matchers/EXPMatchers+postNotification.m"; sourceTree = "<group>"; };
 		AF7FC6DD0FF32838D557850FBD111B68 /* EXPMatchers+postNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+postNotification.h"; path = "Expecta/Matchers/EXPMatchers+postNotification.h"; sourceTree = "<group>"; };
-		B33305C4175F2F05B49DA01C57C0F8AB /* BaselineViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BaselineViewController.m; path = TicTacToe/Classes/BaselineViewController.m; sourceTree = "<group>"; };
 		B470BB15D74EDC3BD4F164143A9EF861 /* XCTest+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCTest+Private.h"; path = "Specta/Specta/XCTest+Private.h"; sourceTree = "<group>"; };
 		B624172FB98AC7E17A7604086543CB24 /* Pods-TicTacToe_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TicTacToe_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		B75206D07413613FA601F23D4F7CF1BF /* EXPExpect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPExpect.m; path = Expecta/EXPExpect.m; sourceTree = "<group>"; };
@@ -381,9 +373,7 @@
 		D213319A62A76D21D76012DCAF48325A /* SpectaDSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaDSL.m; path = Specta/Specta/SpectaDSL.m; sourceTree = "<group>"; };
 		D344EDD09D1396200E8233BD87288176 /* Pods-TicTacToe_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TicTacToe_Tests-umbrella.h"; sourceTree = "<group>"; };
 		D4F35B526A6E9FE835F7B059530AF531 /* SpectaUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaUtility.m; path = Specta/Specta/SpectaUtility.m; sourceTree = "<group>"; };
-		D67CC97B4739575FF70F5D9B9ACB715D /* UIView+Extensions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extensions.m"; path = "TicTacToe/Classes/UIView+Extensions.m"; sourceTree = "<group>"; };
 		D71F1A7862356212D342672332CA7F21 /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
-		D7974D0C2F7F11D2412E2A696FF06FE4 /* BaselineViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BaselineViewController.h; path = TicTacToe/Classes/BaselineViewController.h; sourceTree = "<group>"; };
 		D84312C9F751F547808B90B3471A69B1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		D87BD96E851071BB8A7C63BF0A26AF08 /* EXPMatchers+beInTheRangeOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInTheRangeOf.h"; path = "Expecta/Matchers/EXPMatchers+beInTheRangeOf.h"; sourceTree = "<group>"; };
 		D8A97ECCDEE7F27973198D2C2C88107A /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
@@ -419,10 +409,12 @@
 		F80C74F675C6A7BA92CBA58057C9078E /* Pods-TicTacToe_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TicTacToe_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		F827D555082DC6514605F9AB327FE273 /* EXPMatchers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPMatchers.h; path = Expecta/Matchers/EXPMatchers.h; sourceTree = "<group>"; };
 		F919EF3503C402CC5F7A4C3DB6193377 /* SPTTestSuite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTTestSuite.h; path = Specta/Specta/SPTTestSuite.h; sourceTree = "<group>"; };
-		FD73693F23D5050D000EA59E /* TapableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TapableView.h; path = TicTacToe/Classes/TapableView.h; sourceTree = "<group>"; };
-		FD73694023D5050D000EA59E /* TapableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TapableView.m; path = TicTacToe/Classes/TapableView.m; sourceTree = "<group>"; };
-		FD73694323D50799000EA59E /* ActionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ActionViewController.h; path = TicTacToe/Classes/ActionViewController.h; sourceTree = "<group>"; };
-		FD73694423D50799000EA59E /* ActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ActionViewController.m; path = TicTacToe/Classes/ActionViewController.m; sourceTree = "<group>"; };
+		FDF9021C23D56A3F00D2F1CB /* TicTaeToeWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicTaeToeWindow.h; path = TicTacToe/Classes/TicTaeToeWindow.h; sourceTree = "<group>"; };
+		FDF9021D23D56A3F00D2F1CB /* TicTaeToeWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTaeToeWindow.m; path = TicTacToe/Classes/TicTaeToeWindow.m; sourceTree = "<group>"; };
+		FDF9021E23D56A3F00D2F1CB /* TicTacToeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTacToeViewController.m; path = TicTacToe/Classes/TicTacToeViewController.m; sourceTree = "<group>"; };
+		FDF9021F23D56A3F00D2F1CB /* TicTacToeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicTacToeViewController.h; path = TicTacToe/Classes/TicTacToeViewController.h; sourceTree = "<group>"; };
+		FDF9022023D56A3F00D2F1CB /* UIView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extensions.h"; path = "TicTacToe/Classes/UIView+Extensions.h"; sourceTree = "<group>"; };
+		FDF9022123D56A3F00D2F1CB /* UIView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extensions.m"; path = "TicTacToe/Classes/UIView+Extensions.m"; sourceTree = "<group>"; };
 		FE7FFA6FCAFB27A7D7E44187593351F4 /* EXPMatchers+beGreaterThan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThan.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThan.h"; sourceTree = "<group>"; };
 		FEFD4A1C51CB7BA963FEFB3824AED27A /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
 		FF453CC0D321E182D58A17C8CBA7C761 /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
@@ -820,18 +812,14 @@
 		FA6D499085426AD85E9AA9638BD565FF /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
-				D7974D0C2F7F11D2412E2A696FF06FE4 /* BaselineViewController.h */,
-				B33305C4175F2F05B49DA01C57C0F8AB /* BaselineViewController.m */,
-				27006164FCBE044EC1408621C35B5C29 /* CustomWindow.h */,
-				91A9A55297252A9F3EA5EDBA58B1BC03 /* CustomWindow.m */,
-				430321862022BFEAD5C9BB16EE8FD765 /* UIView+Extensions.h */,
-				D67CC97B4739575FF70F5D9B9ACB715D /* UIView+Extensions.m */,
+				FDF9021F23D56A3F00D2F1CB /* TicTacToeViewController.h */,
+				FDF9021E23D56A3F00D2F1CB /* TicTacToeViewController.m */,
+				FDF9021C23D56A3F00D2F1CB /* TicTaeToeWindow.h */,
+				FDF9021D23D56A3F00D2F1CB /* TicTaeToeWindow.m */,
+				FDF9022023D56A3F00D2F1CB /* UIView+Extensions.h */,
+				FDF9022123D56A3F00D2F1CB /* UIView+Extensions.m */,
 				08F972DB6485E4EDD9AFF1055F55B705 /* Pod */,
 				941013655E36B3499E40C1F5FC200D8F /* Support Files */,
-				FD73693F23D5050D000EA59E /* TapableView.h */,
-				FD73694023D5050D000EA59E /* TapableView.m */,
-				FD73694323D50799000EA59E /* ActionViewController.h */,
-				FD73694423D50799000EA59E /* ActionViewController.m */,
 			);
 			name = TicTacToe;
 			path = ../..;
@@ -880,11 +868,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C2D78B1ED25AD990B853C3E3B67A119 /* TicTacToe-umbrella.h in Headers */,
-				CEAC2C6B3102177BAB2B68693F258F9A /* BaselineViewController.h in Headers */,
-				FD73694123D5050D000EA59E /* TapableView.h in Headers */,
-				0F2C21C83F84F3EF19EA47C6F3FE7A9F /* CustomWindow.h in Headers */,
-				FD73694523D50799000EA59E /* ActionViewController.h in Headers */,
-				8F38E60DCE59BEDC00A512C07167A1EE /* UIView+Extensions.h in Headers */,
+				FDF9022623D56A3F00D2F1CB /* UIView+Extensions.h in Headers */,
+				FDF9022223D56A3F00D2F1CB /* TicTaeToeWindow.h in Headers */,
+				FDF9022523D56A3F00D2F1CB /* TicTacToeViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1321,12 +1307,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF9022323D56A3F00D2F1CB /* TicTaeToeWindow.m in Sources */,
 				B3CE7C66FBED1E4324B3572D7EC35A37 /* TicTacToe-dummy.m in Sources */,
-				FD73694623D50799000EA59E /* ActionViewController.m in Sources */,
-				A11358AEAAEE7D83356102C63F89D9E4 /* BaselineViewController.m in Sources */,
-				FD73694223D5050D000EA59E /* TapableView.m in Sources */,
-				92B7929784CFD0741C106516942DC9C9 /* CustomWindow.m in Sources */,
-				F0AB82EAA0D3054952EB5CAF312EB7AA /* UIView+Extensions.m in Sources */,
+				FDF9022723D56A3F00D2F1CB /* UIView+Extensions.m in Sources */,
+				FDF9022423D56A3F00D2F1CB /* TicTacToeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

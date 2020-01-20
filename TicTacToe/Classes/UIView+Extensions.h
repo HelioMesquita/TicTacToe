@@ -1,17 +1,15 @@
-////
-////  UIView+UIView_Extensions.h
-////  TicTacToe
-////
-////  Created by Helio Loredo Mesquita on 17/01/20.
-////
 //
+//  UIView+Extensions.h
+//  TicTacToe
 //
-//@import UIKit;
+//  Created by Helio Loredo Mesquita on 17/01/20.
 //
-//// UIView+Extensions.h
-//@interface UIView(Extensions)
-//
-//- (CGFloat)maxY;
-//- (CGFloat)maxX;
-//
-//@end
+
+@import UIKit;
+
+@interface UIView(Extensions)
+
+- (CGFloat)maxY;
+- (CGFloat)maxX;
+
+@end
