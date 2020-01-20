@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '8.0'
 
 target 'TicTacToe_Example' do
   pod 'TicTacToe', :path => '../'
@@ -8,9 +8,6 @@ target 'TicTacToe_Example' do
   target 'TicTacToe_Tests' do
     inherit! :search_paths
 
-    pod 'Specta'
-    pod 'Expecta'
-    pod 'FBSnapshotTestCase'
-    pod 'Expecta+Snapshots'
+    
   end
 end

@@ -2,47 +2,34 @@
 //  TicTacToeTests.m
 //  TicTacToeTests
 //
-//  Created by Helio Mesquita on 01/14/2020.
+//  Created by Helio Mesquita on 01/20/2020.
 //  Copyright (c) 2020 Helio Mesquita. All rights reserved.
 //
 
-// https://github.com/Specta/Specta
+@import XCTest;
 
-SpecBegin(InitialSpecs)
+@interface Tests : XCTestCase
 
-describe(@"these will fail", ^{
+@end
 
-    it(@"can do maths", ^{
-        expect(1).to.equal(2);
-    });
+@implementation Tests
 
-    it(@"can read", ^{
-        expect(@"number").to.equal(@"string");
-    });
-    
-    it(@"will wait for 10 seconds and fail", ^{
-        waitUntil(^(DoneCallback done) {
-        
-        });
-    });
-});
+- (void)setUp
+{
+    [super setUp];
+    // Put setup code here. This method is called before the invocation of each test method in the class.
+}
 
-describe(@"these will pass", ^{
-    
-    it(@"can do maths", ^{
-        expect(1).beLessThan(23);
-    });
-    
-    it(@"can read", ^{
-        expect(@"team").toNot.contain(@"I");
-    });
-    
-    it(@"will wait and succeed", ^{
-        waitUntil(^(DoneCallback done) {
-            done();
-        });
-    });
-});
+- (void)tearDown
+{
+    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    [super tearDown];
+}
 
-SpecEnd
+- (void)testExample
+{
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+}
+
+@end
 

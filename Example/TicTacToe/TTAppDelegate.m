@@ -2,7 +2,7 @@
 //  TTAppDelegate.m
 //  TicTacToe
 //
-//  Created by Helio Mesquita on 01/14/2020.
+//  Created by Helio Mesquita on 01/20/2020.
 //  Copyright (c) 2020 Helio Mesquita. All rights reserved.
 //
 
@@ -12,7 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
     // Override point for customization after application launch.
     return YES;
 }

@@ -11,7 +11,7 @@
 #endif
 
 #import "TicTacToeViewController.h"
-#import "TicTacToeWindow.h"
+#import "TicTaeToeWindow.h"
 #import "UIView+Extensions.h"
 
 FOUNDATION_EXPORT double TicTacToeVersionNumber;
