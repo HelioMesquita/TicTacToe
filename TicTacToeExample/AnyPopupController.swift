@@ -21,9 +21,6 @@ public protocol AnyPopupController: class {
 
     var animationDuration: TimeInterval { get set }
     var presentationDuration: TimeInterval? { get set }
-    var cornerRadius: CGFloat { get set }
-    var presentationStyle: PopupAnimationType { get set }
-    var dismissionStyle: PopupAnimationType { get set }
     var dismissOnTap: Bool { get set }
     var fadesBackground: Bool { get set }
 
@@ -32,24 +29,7 @@ public protocol AnyPopupController: class {
     
     /// Just shows the popup and that's it
     func showPopup()
-    
-    /**
-        Use this method to make popup hidden after some time
-     
-        You may use it like this:
-            
-            popup
-                .withPresentationDuration(3)
-                .showPopup()
-     
-        - parameter duration:
-        Duration of showing the popup before it closes
-        
-        - warning:
-        Be sure not to use .now() in duration as it's
-        already used in implementation
-     */
-    func withPresentationDuration(_ duration: TimeInterval?) -> Self
+
     
     /**
         Utility method that explicitly sets the background faded
@@ -78,10 +58,6 @@ public protocol AnyPopupController: class {
 
     // MARK: - Customization
 
-    func withAnimationDuration(_ duration: TimeInterval) -> Self
-    func withCornerRadius(_ radius: CGFloat) -> Self
-    func withPresentationStyle(_ style: PopupAnimationType) -> Self
-    func withDismissionStyle(_ style: PopupAnimationType) -> Self
     func dismissOnTap(_ bool: Bool) -> Self
     func fadesBackground(_ bool: Bool) -> Self
 
@@ -125,14 +101,6 @@ public extension AnyPopupController {
         let popupView = popupController.view
         popupView?.alpha = 0
         
-        switch self.presentationStyle {
-        case .crossDisolve:
-            break
-        case .fromBottom:
-            popupView?.transform = CGAffineTransform(translationX: 0, y: 500)
-        case .fromUp:
-            popupView?.transform = CGAffineTransform(translationX: 0, y: -500)
-        }
         
         UIView.animate(withDuration: animationDuration, animations: {
             popupView?.alpha = 1
@@ -155,45 +123,10 @@ public extension AnyPopupController {
         setBackgroundFaded(false)
         let popupView = popupController.view
         
-        UIView.animate(withDuration: animationDuration, animations: {
-            switch self.dismissionStyle {
-            case .crossDisolve:
-                break
-            case .fromBottom:
-                popupView?.transform = CGAffineTransform(translationX: 0, y: 500)
-            case .fromUp:
-                popupView?.transform = CGAffineTransform(translationX: 0, y: -500)
-            }
-            popupView?.alpha = 0
-        }, completion: { _ in
+
             self.resignFromKeyWindow()
-        })
     }
 
-    func withAnimationDuration(_ duration: TimeInterval) -> Self {
-        animationDuration = duration
-        return self
-    }
-    
-    func withPresentationDuration(_ duration: TimeInterval?) -> Self {
-        presentationDuration = duration
-        return self
-    }
-    
-    func withPresentationStyle(_ style: PopupAnimationType) -> Self {
-        presentationStyle = style
-        return self
-    }
-    
-    func withDismissionStyle(_ style: PopupAnimationType) -> Self {
-        dismissionStyle = style
-        return self
-    }
-    
-    func withCornerRadius(_ radius: CGFloat) -> Self {
-        cornerRadius = radius
-        return self
-    }
     
     func dismissOnTap(_ bool: Bool = true) -> Self {
         dismissOnTap = bool

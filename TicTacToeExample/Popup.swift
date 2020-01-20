@@ -18,13 +18,6 @@ public class Popup: UIViewController, AnyPopupController {
     public var popupController: UIViewController!
     public var animationDuration: TimeInterval = 0.3
     public var presentationDuration: TimeInterval?
-    public var cornerRadius: CGFloat = 20 {
-        didSet {
-            popupController.view.layer.cornerRadius = cornerRadius
-        }
-    }
-    public var presentationStyle: PopupAnimationType = .fromBottom
-    public var dismissionStyle: PopupAnimationType = .crossDisolve
     public var fadesBackground: Bool = true
     public var dismissOnTap: Bool = false
 
@@ -58,10 +51,7 @@ public class Popup: UIViewController, AnyPopupController {
 
     private func setupPopupController() {
         addChild(popupController)
-        let size = UIScreen.main.bounds.size
-        popupController.view.bounds.size = CGSize(width: size.width - 40, height: size.height - 60)
-        popupController.view.center = CGPoint(x: size.width / 2, y: size.height / 2)
-        popupController.view.layer.cornerRadius = cornerRadius
+        popupController.view.frame = UIScreen.main.bounds
         view.addSubview(popupController.view)
     }
 
