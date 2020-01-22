@@ -8,14 +8,14 @@
 
 import UIKit
 
-class GridViewController: UIViewController {
+class TicTacToeViewController: UIViewController {
 
-    var gridView: GridView
-    var actionsView: ActionsView
+    var gridView: TicTacToeGridView
+    var actionsView: TicTacToeActionsView
 
     public init() {
-        self.gridView = GridView()
-        self.actionsView = ActionsView()
+        self.gridView = TicTacToeGridView()
+        self.actionsView = TicTacToeActionsView()
         super.init(nibName: nil, bundle: nil)
     }
 

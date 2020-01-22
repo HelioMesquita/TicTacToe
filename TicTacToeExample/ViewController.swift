@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .cyan
 
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
-        button.addTarget(self, action: #selector(show), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showPopup), for: .touchUpInside)
         button.setTitle("Show popup", for: .normal)
         button.backgroundColor = .systemFill
         button.layer.cornerRadius = 12

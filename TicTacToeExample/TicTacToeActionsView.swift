@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActionsView: UIView {
+class TicTacToeActionsView: UIView {
 
     let touchAreaHeight: CGFloat = 80
     var superiorView: UIView?

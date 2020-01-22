@@ -11,14 +11,14 @@ import UIKit
 public class TicTacToeContainer: UIViewController {
 
     var normalWindow: UIWindow
-    var popupWindow: NewWindow?
-    var gridController: GridViewController!
+    var popupWindow: TicTacToeWindow?
+    var childViewController: TicTacToeViewController
 
     public init() {
         self.normalWindow = UIApplication.topWindow()
+        childViewController = TicTacToeViewController()
         super.init(nibName: nil, bundle: nil)
-        gridController = GridViewController()
-        setupPopupController()
+        setupViewController()
     }
 
     required init?(coder: NSCoder) {
@@ -30,37 +30,38 @@ public class TicTacToeContainer: UIViewController {
         view.backgroundColor = .clear
     }
 
-    private func setupPopupController() {
-        addChild(gridController)
-        gridController.view.frame = UIScreen.main.bounds
-        view.addSubview(gridController.view)
+    private func setupViewController() {
+        addChild(childViewController)
+        childViewController.view.frame = UIScreen.main.bounds
+        view.addSubview(childViewController.view)
     }
 
     func makeSelfKeyWindow() {
-        popupWindow = rightWindow()
+        popupWindow = getWindow()
         popupWindow?.frame = UIScreen.main.bounds
         popupWindow?.backgroundColor = .clear
         popupWindow?.windowLevel = UIWindow.Level.statusBar + 1
         popupWindow?.rootViewController = self
         popupWindow?.makeKeyAndVisible()
-        popupWindow?.inferiorView = gridController.actionsView.inferiorView
-        popupWindow?.superiorView = gridController.actionsView.superiorView
+        popupWindow?.inferiorView = childViewController.actionsView.inferiorView
+        popupWindow?.superiorView = childViewController.actionsView.superiorView
     }
 
-    func rightWindow() -> NewWindow {
+    func getWindow() -> TicTacToeWindow {
         if TicTacToePreferences.shared.isUsingScenePattern {
             let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive })
             if let windowScene = windowScene as? UIWindowScene {
-                return NewWindow(windowScene: windowScene)
+                return TicTacToeWindow(windowScene: windowScene)
             }
         }
-        return NewWindow()
+        return TicTacToeWindow()
     }
 
     func show() {
-        remove()
-        makeSelfKeyWindow()
-        gridController?.didMove(toParent: self)
+        if popupWindow == nil {
+            makeSelfKeyWindow()
+            childViewController.didMove(toParent: self)
+        }
     }
 
     func remove() {

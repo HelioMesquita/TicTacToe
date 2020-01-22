@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GridView: UIView {
+class TicTacToeGridView: UIView {
 
     enum Baseline {
         case SPACING4

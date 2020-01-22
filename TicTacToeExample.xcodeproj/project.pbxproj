@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD23FB6D23D661D300B17600 /* NewWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23FB6C23D661D300B17600 /* NewWindow.swift */; };
-		FD23FB6F23D7CCDE00B17600 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23FB6E23D7CCDE00B17600 /* GridView.swift */; };
-		FD23FB7123D7CD2B00B17600 /* ActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23FB7023D7CD2B00B17600 /* ActionsView.swift */; };
-		FD23FB7323D7CD7A00B17600 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23FB7223D7CD7A00B17600 /* GridViewController.swift */; };
+		FD23FB6D23D661D300B17600 /* TicTacToeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23FB6C23D661D300B17600 /* TicTacToeWindow.swift */; };
+		FD23FB6F23D7CCDE00B17600 /* TicTacToeGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23FB6E23D7CCDE00B17600 /* TicTacToeGridView.swift */; };
+		FD23FB7123D7CD2B00B17600 /* TicTacToeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23FB7023D7CD2B00B17600 /* TicTacToeActionsView.swift */; };
+		FD23FB7323D7CD7A00B17600 /* TicTacToeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD23FB7223D7CD7A00B17600 /* TicTacToeViewController.swift */; };
 		FD7D957123D630C300327CBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D957023D630C300327CBF /* AppDelegate.swift */; };
 		FD7D957323D630C300327CBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D957223D630C300327CBF /* SceneDelegate.swift */; };
 		FD7D957523D630C300327CBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7D957423D630C300327CBF /* ViewController.swift */; };
@@ -53,10 +53,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FD23FB6C23D661D300B17600 /* NewWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWindow.swift; sourceTree = "<group>"; };
-		FD23FB6E23D7CCDE00B17600 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
-		FD23FB7023D7CD2B00B17600 /* ActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsView.swift; sourceTree = "<group>"; };
-		FD23FB7223D7CD7A00B17600 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		FD23FB6C23D661D300B17600 /* TicTacToeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeWindow.swift; sourceTree = "<group>"; };
+		FD23FB6E23D7CCDE00B17600 /* TicTacToeGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeGridView.swift; sourceTree = "<group>"; };
+		FD23FB7023D7CD2B00B17600 /* TicTacToeActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeActionsView.swift; sourceTree = "<group>"; };
+		FD23FB7223D7CD7A00B17600 /* TicTacToeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeViewController.swift; sourceTree = "<group>"; };
 		FD7D956D23D630C300327CBF /* TicTacToeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7D957023D630C300327CBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD7D957223D630C300327CBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,10 +126,10 @@
 				FD7D95AA23D6436C00327CBF /* Extensions.swift */,
 				FD7D95AC23D6436C00327CBF /* TicTacToePreferences.swift */,
 				FD7D95AE23D6436C00327CBF /* TicTacToeContainer.swift */,
-				FD23FB6C23D661D300B17600 /* NewWindow.swift */,
-				FD23FB6E23D7CCDE00B17600 /* GridView.swift */,
-				FD23FB7023D7CD2B00B17600 /* ActionsView.swift */,
-				FD23FB7223D7CD7A00B17600 /* GridViewController.swift */,
+				FD23FB7223D7CD7A00B17600 /* TicTacToeViewController.swift */,
+				FD23FB6C23D661D300B17600 /* TicTacToeWindow.swift */,
+				FD23FB6E23D7CCDE00B17600 /* TicTacToeGridView.swift */,
+				FD23FB7023D7CD2B00B17600 /* TicTacToeActionsView.swift */,
 			);
 			path = TicTacToeExample;
 			sourceTree = "<group>";
@@ -268,15 +268,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD23FB7123D7CD2B00B17600 /* ActionsView.swift in Sources */,
+				FD23FB7123D7CD2B00B17600 /* TicTacToeActionsView.swift in Sources */,
 				FD7D95B423D6436C00327CBF /* TicTacToeContainer.swift in Sources */,
 				FD7D95B023D6436C00327CBF /* Extensions.swift in Sources */,
-				FD23FB7323D7CD7A00B17600 /* GridViewController.swift in Sources */,
+				FD23FB7323D7CD7A00B17600 /* TicTacToeViewController.swift in Sources */,
 				FD7D95B223D6436C00327CBF /* TicTacToePreferences.swift in Sources */,
-				FD23FB6D23D661D300B17600 /* NewWindow.swift in Sources */,
+				FD23FB6D23D661D300B17600 /* TicTacToeWindow.swift in Sources */,
 				FD7D957523D630C300327CBF /* ViewController.swift in Sources */,
 				FD7D957123D630C300327CBF /* AppDelegate.swift in Sources */,
-				FD23FB6F23D7CCDE00B17600 /* GridView.swift in Sources */,
+				FD23FB6F23D7CCDE00B17600 /* TicTacToeGridView.swift in Sources */,
 				FD7D957323D630C300327CBF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

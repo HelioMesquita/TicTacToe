@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewWindow: UIWindow {
+class TicTacToeWindow: UIWindow {
 
     var timer: Timer?
     var clicks: [UIView] = []
