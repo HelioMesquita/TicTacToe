@@ -10,9 +10,9 @@ import UIKit
 
 public class Popup: UIViewController {
 
-    public var normalWindow: UIWindow
-    public var popupWindow: UIWindow?
-    public var gridController: UIViewController!
+    var normalWindow: UIWindow
+    var popupWindow: NewWindow?
+    var gridController: GridViewController!
 
     public init() {
         self.normalWindow = UIApplication.topWindow()
@@ -43,9 +43,11 @@ public class Popup: UIViewController {
         popupWindow?.windowLevel = UIWindow.Level.statusBar + 1
         popupWindow?.rootViewController = self
         popupWindow?.makeKeyAndVisible()
+        popupWindow?.inferiorView = gridController.actionsView.inferiorView
+        popupWindow?.superiorView = gridController.actionsView.superiorView
     }
 
-    func rightWindow() -> UIWindow {
+    func rightWindow() -> NewWindow {
         if JustPopupPreferences.shared.shouldFollowScenePattern {
             let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive })
             if let windowScene = windowScene as? UIWindowScene {
@@ -63,7 +65,7 @@ public class Popup: UIViewController {
 
 }
 
-private class GridViewController: UIViewController {
+class GridViewController: UIViewController {
 
     var gridView: GridView
     var actionsView: ActionsView
@@ -78,21 +80,34 @@ private class GridViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public override func loadView() {
-        super.loadView()
-        view = gridView
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.addSubview(gridView)
+        self.view.addSubview(actionsView)
+        NSLayoutConstraint.activate([
+            gridView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            gridView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            gridView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            gridView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+
+            actionsView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            actionsView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            actionsView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            actionsView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+        ])
     }
 
 }
 
 class ActionsView: UIView {
 
-    let touchAreaHeight: CGFloat = 80;
+    let touchAreaHeight: CGFloat = 80
     var superiorView: UIView?
     var inferiorView: UIView?
 
     init() {
         super.init(frame: UIScreen.main.bounds)
+        translatesAutoresizingMaskIntoConstraints = false
         configure()
     }
 
@@ -140,8 +155,17 @@ class ActionsView: UIView {
 
 class GridView: UIView {
 
+
+    enum Baseline {
+        case SPACING4
+        case SPACING8
+        case OFF
+    }
+
     let lineSize: CGFloat = 1;
     let lineSpacing: CGFloat = 4;
+
+    var currentBaseline: Baseline = .OFF
 
     var horizontalBaselines: [UIView] = []
     var horizontalSpacing: [NSLayoutConstraint] = []
@@ -150,8 +174,10 @@ class GridView: UIView {
 
     init() {
         super.init(frame: UIScreen.main.bounds)
+        translatesAutoresizingMaskIntoConstraints = false
         configureView()
         addBaselines()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleTouchEvent), name: .didChangeBaseline, object: nil)
     }
 
     required init?(coder: NSCoder) {
@@ -167,6 +193,25 @@ class GridView: UIView {
         startBaselineVertical()
         startBaselineHorizontal()
 //        setBaselineHidden(true)
+    }
+
+    @objc func handleTouchEvent() {
+        switch (currentBaseline) {
+        case .SPACING4:
+            currentBaseline = .SPACING8;
+            setBaselineHidden(false)
+            setBaselineSpacing(8)
+            break;
+        case .SPACING8:
+            currentBaseline = .OFF;
+            setBaselineHidden(true)
+            break;
+        case .OFF:
+            currentBaseline = .SPACING4;
+            setBaselineHidden(false)
+            setBaselineSpacing(4)
+            break;
+        }
     }
 
     func startBaselineVertical() {

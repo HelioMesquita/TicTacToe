@@ -30,82 +30,32 @@ class NewWindow: UIWindow {
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if timer == nil {
-            timer = Timer(timeInterval: 0.1, target: self, selector: #selector(timerFired), userInfo: nil, repeats: false)
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerFired), userInfo: nil, repeats: false)
         }
 
-        let view = super.hitTest(point, with: event)
-//        if inferiorView!.bounds.contains(view!.frame) {
-//            clicks.append(inferiorView!)
-//        }
-//        if superiorView!.bounds.contains(view!.frame) {
-//            clicks.append(superiorView!)
-//        }
+        let p = convert(point, to: self)
+        
+        if inferiorView!.frame.contains(p) {
+            print("click inferior")
+            clicks.append(inferiorView!)
+        }
+
+        if superiorView!.frame.contains(p) {
+            print("click superior")
+            clicks.append(superiorView!)
+        }
 
 
-        return view == self ? nil : view
+        return nil
     }
 
     @objc func timerFired() {
         if clicks.count == 2 {
-//            [self.viewController handleTouchEvent];
+            print("top")
+            NotificationCenter.default.post(name: .didChangeBaseline, object: true)
         }
         clicks.removeAll()
         timer?.invalidate()
         timer = nil;
     }
 }
-
-//
-//  UIWindow+TTWindow.m
-//  TicTacToe
-//
-//  Created by Hélio Mesquita on 14/01/20.
-//
-
-//#import "TicTaeToeWindow.h"
-//
-//@interface TicTaeToeWindow ()
-//
-//@end
-//
-//@implementation TicTaeToeWindow
-//
-//NSTimer *timer;
-//NSMutableArray * clicks;
-//
-//- (instancetype)init {
-//    self = [super initWithFrame:UIScreen.mainScreen.bounds];
-//    if (self) {
-//        self.backgroundColor = nil;
-//        clicks = [NSMutableArray array];
-//        return self;
-//    }
-//    return self;
-//}
-//
-//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-//    if (timer == nil) {
-//        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerFired) userInfo:nil repeats:false];
-//    }
-//
-//    UIView * view = [super hitTest:point withEvent:event];
-//    if (CGRectContainsPoint(self.superiorView.frame, point)) {
-//        [clicks addObject:self.superiorView];
-//    }
-//
-//    if (CGRectContainsPoint(self.inferiorView.frame, point)) {
-//        [clicks addObject:self.inferiorView];
-//    }
-//    return view == self ? nil : view;
-//}
-//
-//-(void)timerFired {
-//    if (clicks.count == 2) {
-//        [self.viewController handleTouchEvent];
-//    }
-//    [clicks removeAllObjects];
-//    [timer invalidate];
-//    timer = nil;
-//}
-//
-//@end
