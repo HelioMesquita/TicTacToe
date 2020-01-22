@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Popup: UIViewController {
+public class TicTacToeContainer: UIViewController {
 
     var normalWindow: UIWindow
     var popupWindow: NewWindow?
@@ -48,7 +48,7 @@ public class Popup: UIViewController {
     }
 
     func rightWindow() -> NewWindow {
-        if JustPopupPreferences.shared.shouldFollowScenePattern {
+        if TicTacToePreferences.shared.isUsingScenePattern {
             let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive })
             if let windowScene = windowScene as? UIWindowScene {
                 return NewWindow(windowScene: windowScene)
@@ -57,9 +57,16 @@ public class Popup: UIViewController {
         return NewWindow()
     }
 
-    func showPopup() {
+    func show() {
+        remove()
         makeSelfKeyWindow()
         gridController?.didMove(toParent: self)
+    }
+
+    func remove() {
+        popupWindow?.rootViewController = nil
+        popupWindow = nil
+        normalWindow.makeKeyAndVisible()
     }
 
 }
