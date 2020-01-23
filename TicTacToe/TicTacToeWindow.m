@@ -5,13 +5,13 @@
 //  Created by Hélio Mesquita on 14/01/20.
 //
 
-#import "TicTaeToeWindow.h"
+#import "TicTacToeWindow.h"
 
-@interface TicTaeToeWindow ()
+@interface TicTacToeWindow ()
 
 @end
 
-@implementation TicTaeToeWindow
+@implementation TicTacToeWindow
 
 NSTimer *timer;
 NSMutableArray * clicks;

@@ -9,7 +9,7 @@
 
 @import UIKit;
 
-@interface TicTaeToeWindow : UIWindow
+@interface TicTacToeWindow : UIWindow
 
 @property (nonatomic,strong) TicTacToeViewController * viewController;
 @property (nonatomic,strong) UIView * superiorView;

@@ -6,7 +6,7 @@
 //
 
 #import "TicTacToeViewController.h"
-#import "TicTaeToeWindow.h"
+#import "TicTacToeWindow.h"
 
 @interface TicTacToeViewController ()
 
@@ -20,7 +20,7 @@ typedef enum {
     OFF
 } Baseline;
 
-TicTaeToeWindow * window;
+TicTacToeWindow * window;
 UIView * superiorView;
 UIView * inferiorView;
 
@@ -39,7 +39,7 @@ NSMutableArray * verticalSpacing;
 - (instancetype)init {
     self = [super initWithNibName: nil bundle: nil];
     if (self) {
-        window = [[TicTaeToeWindow new]init];
+        window = [[TicTacToeWindow new]init];
         window.windowLevel = UIWindowLevelStatusBar+1;
         [window setHidden:NO];
         [window setRootViewController: self];
