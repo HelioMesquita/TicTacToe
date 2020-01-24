@@ -9,6 +9,4 @@
 
 @interface TicTacToeViewController : UIViewController
 
-- (void)handleTouchEvent;
-
 @end

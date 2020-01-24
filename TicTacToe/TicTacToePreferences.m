@@ -7,6 +7,7 @@
 //
 
 #import "TicTacToePreferences.h"
+#import "TicTacToeContainer.h"
 
 @implementation TicTacToePreferences
 
@@ -24,17 +25,17 @@ TicTacToeContainer * container;
 - (id)init {
     if (self = [super init]) {
         self.isUsingScenePattern = false;
-        self.container = [[TicTacToeContainer new]init];
+        container = [[TicTacToeContainer new]init];
     }
     return self;
 }
 
 - (void)show {
-    [self.container show];
+    [container show];
 }
 
 - (void)remove {
-    [self.container remove];
+    [container remove];
 }
 
 @end

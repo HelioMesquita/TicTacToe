@@ -14,13 +14,25 @@
 @implementation TicTacToeWindow
 
 NSTimer *timer;
-NSMutableArray * clicks;
+NSMutableArray * taps;
+
+
+- (instancetype)initWithWindowScene:(UIWindowScene *)windowScene {
+    self = [super initWithWindowScene:windowScene];
+    self.frame = UIScreen.mainScreen.bounds;
+    if (self) {
+        self.backgroundColor = UIColor.clearColor;
+        taps = [NSMutableArray array];
+        return self;
+    }
+    return self;
+}
 
 - (instancetype)init {
     self = [super initWithFrame:UIScreen.mainScreen.bounds];
     if (self) {
-        self.backgroundColor = nil;
-        clicks = [NSMutableArray array];
+        self.backgroundColor = UIColor.clearColor;
+        taps = [NSMutableArray array];
         return self;
     }
     return self;
@@ -33,20 +45,20 @@ NSMutableArray * clicks;
 
     UIView * view = [super hitTest:point withEvent:event];
     if (CGRectContainsPoint(self.superiorView.frame, point)) {
-        [clicks addObject:self.superiorView];
+        [taps addObject:self.superiorView];
     }
 
     if (CGRectContainsPoint(self.inferiorView.frame, point)) {
-        [clicks addObject:self.inferiorView];
+        [taps addObject:self.inferiorView];
     }
     return view == self ? nil : view;
 }
 
 -(void)timerFired {
-    if (clicks.count == 2) {
-        [self.viewController handleTouchEvent];
+    if (taps.count == 2) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"didChangeBaseline" object:nil];
     }
-    [clicks removeAllObjects];
+    [taps removeAllObjects];
     [timer invalidate];
     timer = nil;
 }

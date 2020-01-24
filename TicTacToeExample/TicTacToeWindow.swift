@@ -11,7 +11,7 @@ import UIKit
 class TicTacToeWindow: UIWindow {
 
     var timer: Timer?
-    var clicks: [UIView] = []
+    var taps: [UIView] = []
     var superiorView: UIView?
     var inferiorView: UIView?
 
@@ -37,12 +37,12 @@ class TicTacToeWindow: UIWindow {
         
         if inferiorView!.frame.contains(p) {
             print("click inferior")
-            clicks.append(inferiorView!)
+            taps.append(inferiorView!)
         }
 
         if superiorView!.frame.contains(p) {
             print("click superior")
-            clicks.append(superiorView!)
+            taps.append(superiorView!)
         }
 
 
@@ -50,11 +50,11 @@ class TicTacToeWindow: UIWindow {
     }
 
     @objc func timerFired() {
-        if clicks.count == 2 {
+        if taps.count == 2 {
             print("top")
             NotificationCenter.default.post(name: .didChangeBaseline, object: true)
         }
-        clicks.removeAll()
+        taps.removeAll()
         timer?.invalidate()
         timer = nil;
     }
