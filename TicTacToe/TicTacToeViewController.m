@@ -6,7 +6,6 @@
 //
 
 #import "TicTacToeViewController.h"
-#import "TicTacToeGridView.h"
 
 @interface TicTacToeViewController ()
 
@@ -14,30 +13,27 @@
 
 @implementation TicTacToeViewController
 
-TicTacToeGridView * gridView;
-TicTacToeActionsView * actionsView;
-
 - (instancetype)init {
-    gridView = [[TicTacToeGridView new]init];
-    actionsView = [[TicTacToeActionsView new]init];
+    self.gridView = [[TicTacToeGridView new]init];
+    self.actionsView = [[TicTacToeActionsView new]init];
     self = [super init];
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:gridView];
-    [self.view addSubview:actionsView];
+    [self.view addSubview:self.gridView];
+    [self.view addSubview:self.actionsView];
     [NSLayoutConstraint activateConstraints:@[
-        [gridView.topAnchor constraintEqualToAnchor: self.view.topAnchor],
-        [gridView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
-        [gridView.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
-        [gridView.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
+        [self.gridView.topAnchor constraintEqualToAnchor: self.view.topAnchor],
+        [self.gridView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
+        [self.gridView.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
+        [self.gridView.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
 
-        [actionsView.topAnchor constraintEqualToAnchor: self.view.topAnchor],
-        [actionsView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
-        [actionsView.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
-        [actionsView.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
+        [self.actionsView.topAnchor constraintEqualToAnchor: self.view.topAnchor],
+        [self.actionsView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
+        [self.actionsView.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
+        [self.actionsView.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
     ]
      ];
 }

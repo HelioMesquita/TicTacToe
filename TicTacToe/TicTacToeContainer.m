@@ -11,6 +11,7 @@
 #import "TicTacToeContainer.h"
 #import "TicTacToeWindow.h"
 #import "TicTacToePreferences.h"
+#import "TicTacToeViewController.h"
 
 @interface TicTacToeContainer ()
 
@@ -59,7 +60,7 @@ TicTacToeViewController * childViewController;
             for (UIScene *scene in scenes) {
                 if (scene.activationState == UISceneActivationStateForegroundActive) {
                     UIWindowScene *windowScene = (UIWindowScene *)scene;
-                    return TicTacToeWindow(windowScene: windowScene);
+                    return [[TicTacToeWindow new]initWithWindowScene: windowScene];
                 }
             }
         } else {
