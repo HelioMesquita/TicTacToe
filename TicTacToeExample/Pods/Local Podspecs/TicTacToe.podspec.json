@@ -19,8 +19,9 @@
     "tag": "0.0.1"
   },
   "source_files": [
-    "TicTacToe",
-    "TicTacToe/*.{h,m}"
+    "TicTacToe/Public/*.{h,m}",
+    "TicTacToe/Private/*.{h,m}"
   ],
+  "private_header_files": "TicTacToe/Private/*.h",
   "requires_arc": true
 }
