@@ -14,7 +14,8 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/HelioMesquita/TicTacToe.git", :branch => "master", :tag => spec.version.to_s }
-  spec.source_files  = "TicTacToe", "TicTacToe/*.{h,m}"
+  spec.source_files  = "TicTacToe/*.{h,m}"
   spec.requires_arc = true
+  spec.public_header_files = "TicTacToe/*.h"
 
 end
