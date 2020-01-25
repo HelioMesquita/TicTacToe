@@ -1,0 +1,16 @@
+PODS:
+  - TicTacToe (0.0.1)
+
+DEPENDENCIES:
+  - TicTacToe (from `../`)
+
+EXTERNAL SOURCES:
+  TicTacToe:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TicTacToe: 1d108528dac8d341fdd6aeae16e0208684c014aa
+
+PODFILE CHECKSUM: f5c6a004bd7d3c88a669f67445c7648aed69fa38
+
+COCOAPODS: 1.8.4
