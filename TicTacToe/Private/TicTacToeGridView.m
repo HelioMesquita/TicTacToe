@@ -38,10 +38,14 @@ NSMutableArray * verticalSpacing;
     self = [super initWithFrame:UIScreen.mainScreen.bounds];
     if (self) {
         self.translatesAutoresizingMaskIntoConstraints = false;
-        [self configureView];
-        [self addBaselines];
     }
     return self;
+}
+
+- (void)configure {
+    [self configureView];
+    [self addBaselines];
+    [self setBaselineHidden:true];
 }
 
 -(void) configureView {
@@ -62,7 +66,6 @@ NSMutableArray * verticalSpacing;
 }
 
 - (void)handleTouchEvent {
-    NSLog(@"handletouchevent");
     switch (currentBaseline) {
         case SPACING4:
             currentBaseline = SPACING8;

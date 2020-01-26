@@ -13,5 +13,7 @@
 @property (nonatomic,strong) UIView * superiorView;
 @property (nonatomic,strong) UIView * inferiorView;
 
+- (void)configure;
+
 @end
 

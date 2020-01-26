@@ -40,17 +40,15 @@ NSMutableArray * taps;
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     if (timer == nil) {
-        timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired) userInfo:nil repeats:false];
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerFired) userInfo:nil repeats:false];
     }
 
     UIView * view = [super hitTest:point withEvent:event];
     if (CGRectContainsPoint(self.superiorView.frame, point)) {
-        NSLog(@"superior");
         [taps addObject:self.superiorView];
     }
 
     if (CGRectContainsPoint(self.inferiorView.frame, point)) {
-        NSLog(@"inferior");
         [taps addObject:self.inferiorView];
     }
     return view == self ? nil : view;

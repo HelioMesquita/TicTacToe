@@ -22,7 +22,6 @@ CGFloat touchAreaHeight = 80;
     self = [super initWithFrame:UIScreen.mainScreen.bounds];
     if (self) {
         self.translatesAutoresizingMaskIntoConstraints = false;
-        [self configure];
     }
     return self;
 }

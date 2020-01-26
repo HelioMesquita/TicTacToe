@@ -37,11 +37,12 @@
         [self.actionsView.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
     ]
      ];
+    [self.actionsView configure];
+    [self.gridView configure];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"didChangeBaseline" object:nil];
     [[NSNotificationCenter defaultCenter] addObserverForName:@"didChangeBaseline" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
         [self.gridView handleTouchEvent];
     }];
