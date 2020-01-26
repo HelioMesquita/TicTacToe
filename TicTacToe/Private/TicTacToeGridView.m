@@ -21,7 +21,6 @@ typedef enum {
     OFF
 } Baseline;
 
-
 Baseline currentBaseline = OFF;
 CGFloat lineSize = 1;
 CGFloat lineSpacing = 4;
