@@ -10,5 +10,7 @@
 
 @interface TicTacToeGridView : UIView
 
+- (void)handleTouchEvent;
+
 @end
 

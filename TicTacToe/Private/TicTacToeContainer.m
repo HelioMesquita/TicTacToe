@@ -25,18 +25,19 @@ TicTacToeViewController * childViewController;
 
 - (instancetype)init {
     normalWindow = UIApplication.sharedApplication.windows.lastObject;
-    childViewController = [[TicTacToeViewController new]init];
     self = [super init];
-    [self setupViewController];
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupViewController];
+    [self.view setUserInteractionEnabled:false];
     [self.view setBackgroundColor: UIColor.clearColor];
 }
 
 - (void)setupViewController {
+    childViewController = [[TicTacToeViewController new]init];
     [self addChildViewController:childViewController];
     childViewController.view.frame = UIScreen.mainScreen.bounds;
     [self.view addSubview:childViewController.view];
@@ -57,9 +58,9 @@ TicTacToeViewController * childViewController;
     if (TicTacToePreferences.shared.isUsingScenePattern) {
         if (@available(iOS 13.0, *)) {
             NSArray * scenes = UIApplication.sharedApplication.connectedScenes.allObjects;
-            for (UIScene *scene in scenes) {
+            for (UIScene * scene in scenes) {
                 if (scene.activationState == UISceneActivationStateForegroundActive) {
-                    UIWindowScene *windowScene = (UIWindowScene *)scene;
+                    UIWindowScene * windowScene = (UIWindowScene *)scene;
                     return [[TicTacToeWindow new]initWithWindowScene: windowScene];
                 }
             }

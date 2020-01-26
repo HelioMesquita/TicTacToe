@@ -58,9 +58,9 @@ CGFloat touchAreaHeight = 80;
 
 - (nonnull UIView *)createView:(nonnull UIColor *)color {
     UIView * touchView = [[UIView alloc]init];
-     touchView.translatesAutoresizingMaskIntoConstraints = false;
-     touchView.backgroundColor = color;
-    [ touchView setUserInteractionEnabled:true];
+    touchView.translatesAutoresizingMaskIntoConstraints = false;
+    touchView.backgroundColor = color;
+    [touchView setUserInteractionEnabled:true];
     [self addSubview: touchView];
     [self sendSubviewToBack: touchView];
     return  touchView;

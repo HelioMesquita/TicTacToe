@@ -10,9 +10,11 @@
 
 @interface TicTacToePreferences : NSObject {
 }
-+ (TicTacToePreferences *) shared;
++ (TicTacToePreferences * _Nonnull) shared;
 
-@property Boolean *isUsingScenePattern;
+
+@property bool isUsingScenePattern;
+
 - (void)show;
 - (void)remove;
 

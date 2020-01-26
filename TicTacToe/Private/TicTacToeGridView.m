@@ -15,7 +15,6 @@
 
 @implementation TicTacToeGridView
 
-
 typedef enum {
     SPACING4,
     SPACING8,
@@ -41,7 +40,6 @@ NSMutableArray * verticalSpacing;
         self.translatesAutoresizingMaskIntoConstraints = false;
         [self configureView];
         [self addBaselines];
-        [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(handleTouchEvent) name:@"didChangeBaseline" object:nil];
     }
     return self;
 }
@@ -64,6 +62,7 @@ NSMutableArray * verticalSpacing;
 }
 
 - (void)handleTouchEvent {
+    NSLog(@"handletouchevent");
     switch (currentBaseline) {
         case SPACING4:
             currentBaseline = SPACING8;
@@ -99,7 +98,7 @@ NSMutableArray * verticalSpacing;
     for (int i = 1; i <= numberOfDivisions; i++) {
         UIView * previuosBaseline = verticalBaselines.lastObject;
         UIView * baseline = [self createView:verticalColor];
-        NSLayoutConstraint * spacing = [baseline.leadingAnchor constraintEqualToAnchor:previuosBaseline.leadingAnchor constant:lineSpacing];
+        NSLayoutConstraint * spacing = [baseline.leadingAnchor constraintEqualToAnchor:previuosBaseline.trailingAnchor constant:lineSpacing];
 
         [verticalBaselines addObject:baseline];
         [verticalSpacing addObject:spacing];
@@ -112,6 +111,7 @@ NSMutableArray * verticalSpacing;
         ]
          ];
     }
+    [self layoutSubviews];
 }
 
 -(void) startBaselineHorizontal {
@@ -129,9 +129,9 @@ NSMutableArray * verticalSpacing;
      ];
 
     for (int i = 1; i <= numberOfDivisions; i++) {
-        UIView * previuosBaseline = verticalBaselines.lastObject;
+        UIView * previuosBaseline = horizontalBaselines.lastObject;
         UIView * baseline = [self createView:horizontalColor];
-        NSLayoutConstraint * spacing = [baseline.topAnchor constraintEqualToAnchor:previuosBaseline.topAnchor constant:lineSpacing];
+        NSLayoutConstraint * spacing = [baseline.topAnchor constraintEqualToAnchor:previuosBaseline.bottomAnchor constant:lineSpacing];
 
         [horizontalBaselines addObject:baseline];
         [horizontalSpacing addObject:spacing];
@@ -144,8 +144,7 @@ NSMutableArray * verticalSpacing;
         ]
          ];
     }
-
-
+    [self layoutSubviews];
 }
 
 - (void)setBaselineSpacing:(CGFloat)value {

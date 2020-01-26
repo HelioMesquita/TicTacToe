@@ -14,14 +14,15 @@
 @implementation TicTacToeViewController
 
 - (instancetype)init {
-    self.gridView = [[TicTacToeGridView new]init];
-    self.actionsView = [[TicTacToeActionsView new]init];
     self = [super init];
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.gridView = [[TicTacToeGridView new]init];
+    self.actionsView = [[TicTacToeActionsView new]init];
+    [self.view setUserInteractionEnabled:false];
     [self.view addSubview:self.gridView];
     [self.view addSubview:self.actionsView];
     [NSLayoutConstraint activateConstraints:@[
@@ -36,6 +37,14 @@
         [self.actionsView.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
     ]
      ];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"didChangeBaseline" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"didChangeBaseline" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        [self.gridView handleTouchEvent];
+    }];
 }
 
 @end

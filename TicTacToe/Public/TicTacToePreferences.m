@@ -25,12 +25,12 @@ TicTacToeContainer * container;
 - (id)init {
     if (self = [super init]) {
         self.isUsingScenePattern = false;
-        container = [[TicTacToeContainer new]init];
     }
     return self;
 }
 
 - (void)show {
+    container = [[TicTacToeContainer new]init];
     [container show];
 }
 
