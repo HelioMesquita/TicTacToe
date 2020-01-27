@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import TicTacToe
+
 
 class ViewController: UIViewController {
 
@@ -28,8 +28,7 @@ class ViewController: UIViewController {
     }
 
     @objc func showPopup() {
-        TicTacToePreferences.shared().isUsingScenePattern = true
-        TicTacToePreferences.shared().show()
+        
     }
 
 
