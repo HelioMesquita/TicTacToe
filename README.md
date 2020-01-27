@@ -12,7 +12,7 @@ This library inserts on your application a baseline grid.
 
 ## Getting Started
 
-<img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/exampleApp.png" align="left"
+<img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/exampleApp.png" align="right"
      title="Example" width="220  " height="476">
 
 This tool adds the baseline grid over the application, thus allowing you to browse the entire app and verify that the alignment is following the requirements.
