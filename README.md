@@ -1,4 +1,12 @@
-# TicTacToe
+<h3 align="center">
+  <a href="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/logo.png">
+  <img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/logo.png?raw=true" alt="TicTacToe Logo" width="500">
+  </a>
+</h3>
+
+[![Objective-c](https://img.shields.io/badge/Objective--c-language-blue)](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
+[![Cocoapods](https://img.shields.io/badge/Cocoapods-compatible-orange)](https://cocoapods.org)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://github.com/HelioMesquita/TicTacToe/blob/master/LICENSE)
 
 This library inserts on your application a baseline grid.
 
@@ -86,7 +94,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 ## Using the Grid
 
-Explain how to use
+### On Simulator
+
+
+### On Device
 
 ## Authors
 
