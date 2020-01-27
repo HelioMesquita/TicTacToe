@@ -4,10 +4,7 @@ Pod::Spec.new do |spec|
   spec.name         = "TicTacToe"
   spec.version      = "0.0.1"
   spec.summary      = "A baseline view over the application to help verify alignments"
-  spec.description  = 'How many times have you had doubts if an element was aligned?' \ 
-                      'or how many times did your designer say that something was not aligned?' \
-                      'to prevent this problem this library inserts on your application baselines.' \ 
-                      'So you can use the application while checking if the components are within the baselines'
+  spec.description  = 'How many times have you had doubts if an element was aligned? or how many times did your designer say that something was not aligned? to prevent this problem this library inserts on your application baselines. So you can use the application while checking if the components are within the baselines'
 
   spec.homepage     = "https://github.com/HelioMesquita/TicTacToe"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"

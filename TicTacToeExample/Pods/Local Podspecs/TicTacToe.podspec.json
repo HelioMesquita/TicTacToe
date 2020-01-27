@@ -1,8 +1,8 @@
 {
   "name": "TicTacToe",
   "version": "0.0.1",
-  "summary": "A short description of TicTacToe.",
-  "description": "A short description of TicTacToe.",
+  "summary": "A baseline view over the application to help verify alignments",
+  "description": "How many times have you had doubts if an element was aligned? or how many times did your designer say that something was not aligned? to prevent this problem this library inserts on your application baselines. So you can use the application while checking if the components are within the baselines",
   "homepage": "https://github.com/HelioMesquita/TicTacToe",
   "license": {
     "type": "MIT"
@@ -10,6 +10,7 @@
   "authors": {
     "Helio Mesquita": "helio.mesquitaios@gmail.com"
   },
+  "social_media_url": "https://www.linkedin.com/in/hélio-mesquita-b22950109/",
   "platforms": {
     "ios": "9.0"
   },
