@@ -11,7 +11,7 @@
 This library inserts on your application a baseline grid.
 
 ## Getting Started
-<p>
+<p align="right">
 <img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/exampleApp.png" align="right"
      title="Example" width="220  " height="476">
 <sub><i>Example of usage on <a href="https://github.com/HelioMesquita/Swiftmazgin/" title="A iOS application with layout based on App Store that can check the most starred and last updated Swift repository">Swiftmazing</a> app</i></sub>
