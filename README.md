@@ -104,12 +104,8 @@ It is possible to observe that there are two areas highlighted in the Debug View
 Hold down the Option key, which makes two circles appear that, just tap that area :)
 
 <p align="center">
-    <a href="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/debugMode.png">
-        <img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/debugMode.png?raw=true" alt="Debug mode" width="500">
-    </a>
-    <a href="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/twoTaps.png">
-        <img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/twoTaps.png?raw=true" alt="Two taps" width="500">
-    </a>
+    <img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/debugMode.png" width="300" max-width="40%" alt="Debug mode" />
+    <img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/twoTaps.png" width="300" max-width="40%" alt="Two taps" />
 </p>
 
 ## Authors
