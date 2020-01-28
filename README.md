@@ -1,6 +1,6 @@
 <h3 align="center">
   <a href="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/logo.png">
-  <img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/logo.png?raw=true" alt="TicTacToe Logo" width="500">
+    <img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/logo.png?raw=true" alt="TicTacToe Logo" width="500">
   </a>
 </h3>
 
@@ -15,7 +15,7 @@ This library inserts on your application a baseline grid.
 <img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/exampleApp.png" align="right"
      title="Example" width="220  " height="476">
 
-This tool adds the baseline grid over the application, thus allowing you to browse the entire app and verify that the alignment is following the requirements.
+This tool adds the baseline grid over the application, thus allowing you to browse the entire app and verify that the alignment is following the requirements. There are two options of baseline - 4 and 8 size
 
 ### Motivation 
 
@@ -97,10 +97,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 ## Using the Grid
 
+It is possible to observe that there are two areas highlighted in the Debug View Hierachy mode, when these areas are called at the same time they trigger the action to activate or change the way that the baseline is appearing on the screen.
+
 ### On Simulator
 
+Hold down the Option key, which makes two circles appear that, just tap that area :)
 
-### On Device
+<p align="center">
+    <a href="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/debugMode.png">
+        <img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/debugMode.png?raw=true" alt="Debug mode" width="500">
+    </a>
+    <a href="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/twoTaps.png">
+        <img src="https://github.com/HelioMesquita/TicTacToe/blob/master/.assets/twoTaps.png?raw=true" alt="Two taps" width="500">
+    </a>
+</p>
 
 ## Authors
 
